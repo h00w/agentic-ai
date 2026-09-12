@@ -1,0 +1,51 @@
+name: Validate Streamlit Engineering Lab
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "deploy/streamlit/**"
+      - "dataset/**"
+      - ".github/workflows/validate-streamlit-lab.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install app dependencies
+        run: pip install -r deploy/streamlit/requirements.txt
+
+      - name: Compile app
+        run: python -m py_compile deploy/streamlit/app.py
+
+      - name: Start Streamlit and check health
+        run: |
+          streamlit run deploy/streamlit/app.py \
+            --server.headless true \
+            --server.port 8501 \
+            >/tmp/streamlit.log 2>&1 &
+          APP_PID=$!
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8501/_stcore/health; then
+              kill "$APP_PID"
+              wait "$APP_PID" || true
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/streamlit.log
+          kill "$APP_PID" || true
+          exit 1
