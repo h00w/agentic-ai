@@ -8,8 +8,7 @@ from time import perf_counter
 import gradio as gr
 
 BANNER_URL = (
-    "https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/"
-    "agenticai-banner.png"
+    "https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png"
 )
 
 
@@ -242,7 +241,9 @@ def evaluate_answer(
     trace_present: bool,
 ):
     answer = (answer or "").strip()
-    completeness = 1.0 if len(answer) >= 120 else 0.75 if len(answer) >= 60 else 0.4 if answer else 0.0
+    completeness = (
+        1.0 if len(answer) >= 120 else 0.75 if len(answer) >= 60 else 0.4 if answer else 0.0
+    )
     groundedness = 1.0 if evidence_present else 0.25
     tool_accuracy = 1.0 if tool_correct else 0.0
     safety = 1.0 if policy_passed else 0.0
@@ -315,7 +316,9 @@ def run_rag(query: str):
         f"### Grounded answer\n{best_passage}\n\n"
         f"**Primary evidence:** Academy knowledge / `{best_topic}`"
     )
-    status = "STRONG" if best_score >= 0.3 else "WEAK — inspect retrieval before trusting the answer"
+    status = (
+        "STRONG" if best_score >= 0.3 else "WEAK — inspect retrieval before trusting the answer"
+    )
     return answer, table, f"Retrieval confidence: {status}"
 
 
