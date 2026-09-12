@@ -15,9 +15,16 @@ class EvaluationResult:
     estimated_cost_usd: float
 
 
-def evaluate_result(*, expected_terms: list[str], answer: str, latency_ms: float = 0.0,
-                    tool_accuracy: float = 1.0, safety: float = 1.0,
-                    token_usage: int = 0, estimated_cost_usd: float = 0.0) -> EvaluationResult:
+def evaluate_result(
+    *,
+    expected_terms: list[str],
+    answer: str,
+    latency_ms: float = 0.0,
+    tool_accuracy: float = 1.0,
+    safety: float = 1.0,
+    token_usage: int = 0,
+    estimated_cost_usd: float = 0.0,
+) -> EvaluationResult:
     expected = [term.lower() for term in expected_terms]
     text = answer.lower()
     correctness = 1.0 if not expected else sum(term in text for term in expected) / len(expected)
