@@ -13,66 +13,77 @@ short_description: Transparent playground for trustworthy AI agent engineering
 
 # Agentic AI Playground
 
+![Agentic AI Academy](https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png)
+
 A public interactive companion to the **Agentic AI Academy** by **Hendar Mawan, PhD**.
 
-This Space is designed as an engineering playground rather than a generic chatbot. It exposes the execution path so learners and reviewers can inspect how an agent selects tools, passes policy gates, produces evidence and is evaluated.
+This Space is an engineering playground rather than a generic chatbot. It exposes planning, tool routing, policy decisions, evidence, retrieval, security controls and evaluation so learners, engineers and reviewers can inspect how trustworthy agent behavior is constructed.
 
-## What you can explore
+## Explore the playground
 
-- bounded agent execution
-- deterministic tool routing
-- human approval gates
-- policy decisions
-- safe arithmetic execution
-- grounded Academy knowledge retrieval
-- execution traces
-- transparent evaluation metrics
-- enterprise-oriented agent architecture
+- **Agent Playground** — bounded agent execution, scenario selection, tool routing, policy gates, approval requirements, latency and trace inspection
+- **RAG Lab** — transparent retrieval over Academy knowledge with ranked evidence, match scores and provenance
+- **Security / Prompt Injection** — inspect obvious instruction-override, secret-extraction, data-exfiltration and unsafe-tool indicators, then review the recommended control path
+- **Evaluation Lab** — inspect task completeness, groundedness, tool accuracy, safety, traceability and response-efficiency gates
+- **Architecture** — study the enterprise execution path from user goal through policy, tools, retrieval, evaluation, approval and audit
 
 ## Why this design
 
-Trustworthy Agentic AI requires more than model capability. Production systems need explicit control over tools, permissions, evidence, evaluation, observability and human responsibility.
+Trustworthy Agentic AI requires more than model capability. Production systems need explicit control over tools, permissions, evidence, retrieval, evaluation, observability and human responsibility.
 
-The playground therefore makes those controls visible instead of hiding them behind an opaque conversational interface.
+The playground therefore makes these controls visible instead of hiding them behind an opaque conversational interface. The first public version is intentionally deterministic, framework-neutral and side-effect free so the control flow remains inspectable.
 
 ## Architecture
 
 ```text
 User Goal
    ↓
-Controller
+Agent Controller
    ↓
-Planner / Tool Selection
+Planner
    ↓
 Policy Engine
    ↓
 Tool Gateway
    ↓
-Knowledge / Bounded Tools
+Research Tools + Knowledge / RAG
    ↓
-Evidence + Evaluation
+Evaluation
    ↓
 Human Approval when required
    ↓
-Response + Audit Trace
+Final Response
+   ↓
+Audit / Observability
 ```
+
+## Production principles demonstrated
+
+- least-privilege tool access
+- explicit policy decisions before high-impact actions
+- human approval for sensitive or irreversible operations
+- prompt-injection-aware handling of untrusted content
+- retrieval provenance and evidence visibility
+- transparent release-gate evaluation
+- execution traces and latency visibility
+- bounded arithmetic rather than arbitrary code execution
+- no external side effects in the public demo
 
 ## Source
 
 - Academy repository: https://github.com/h00w/agentic-ai
 - Academy website: https://hendarmawan.se/agentic-ai/
-- Author: https://hendarmawan.se/
+- Author website: https://hendarmawan.se/
+- LinkedIn: https://www.linkedin.com/in/hender/
 
 ## Deployment
 
-This directory is the curated public Space package for `h0000w/hendar-agentic-ai`. GitHub Actions publishes it using the repository secret `HF_TOKEN`, so the Hugging Face Space stays synchronized with the Academy source while remaining intentionally smaller than the canonical repository.
+This directory is the curated public Space package for `h0000w/hendar-agentic-ai`. GitHub Actions publishes it using the repository secret `HF_TOKEN`, keeping the Space synchronized with the Academy source while preserving GitHub as the canonical curriculum and engineering repository.
 
-Deployment trigger verified after configuring the GitHub Actions secret.
+## Next iterations
 
-## Planned next iterations
-
-The first public release is intentionally framework-neutral and side-effect free. Future iterations can add optional Hugging Face inference, richer RAG, scenario-based evaluation and production observability while keeping policy and approval boundaries explicit.
+The next iterations can add optional Hugging Face inference, richer document-backed RAG, benchmark datasets, scenario-based regression evaluation, and production observability integrations while retaining explicit policy and approval boundaries.
 
 ## License
 
-MIT License. See the canonical repository for the full license and curriculum.
+MIT License. See the canonical repository for the complete license, curriculum and engineering assets.
