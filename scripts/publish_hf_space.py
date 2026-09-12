@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import os
-from pathlib import Path
+import pathlib
 
 from huggingface_hub import HfApi
 
-
 SPACE_REPO = os.environ.get("HF_SPACE_REPO", "h0000w/hendar-agentic-ai")
 TOKEN = os.environ.get("HF_TOKEN")
-SOURCE = Path("deploy/huggingface")
+SOURCE = pathlib.Path("deploy/huggingface")
 
 
 def main() -> None:
