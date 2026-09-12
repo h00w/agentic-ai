@@ -29,7 +29,7 @@
 
 <p align="center">
   <a href="https://hendarmawan.se/agentic-ai/">
-    <img src="assets/agenticai-banner.png" alt="Agentic AI — From Learning to Implementation to Scale" width="100%">
+    <img src="https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png" alt="Agentic AI — From Learning to Implementation to Scale" width="100%">
   </a>
 </p>
 
