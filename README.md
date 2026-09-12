@@ -6,7 +6,7 @@
 
 **By Hendar Mawan, PhD**
 
-![Agentic AI — From Learning to Implementation to Scale](assets/agenticai-banner.png)
+![Agentic AI — From Learning to Implementation to Scale]([assets/agenticai-banner.png](https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png))
 
 > **Hendar Mawan : AI Engineering Leader**  
 > AI Engineering · AI Architecture · Agentic AI · Secure AI · Edge AI · AI Governance
