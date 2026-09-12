@@ -77,6 +77,9 @@ class AgentController:
         names = self.tools.names()
         if ("calculate" in lowered or any(ch.isdigit() for ch in goal)) and "calculator" in names:
             return "calculator"
-        if any(word in lowered for word in ("search", "research", "find", "evidence")) and "search" in names:
+        if (
+            any(word in lowered for word in ("search", "research", "find", "evidence"))
+            and "search" in names
+        ):
             return "search"
         return names[0] if names else None
