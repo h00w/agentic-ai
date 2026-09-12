@@ -9,11 +9,30 @@
 > **Hendar Mawan : AI Engineering Leader**  
 > AI Engineering · AI Architecture · Agentic AI · Secure AI · Edge AI · AI Governance
 
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Curriculum](https://img.shields.io/badge/Curriculum-14%20Modules-0B3D91)](curriculum/)
-[![Security](https://img.shields.io/badge/Security-Defense--in--Depth-2E8B57)](docs/security.md)
-[![Evaluation](https://img.shields.io/badge/Evaluation-Reproducible-6A5ACD)](evaluation/)
+
+<h1 align="center">Agentic AI</h1>
+
+<p align="center">
+  <strong>From Foundations to Production-Grade Autonomous AI Systems</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.12%2B-3776AB" alt="Python 3.12+">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
+  </a>
+  <a href="curriculum/">
+    <img src="https://img.shields.io/badge/Curriculum-14%20Modules-0B3D91" alt="Curriculum">
+  </a>
+  <a href="docs/security.md">
+    <img src="https://img.shields.io/badge/Security-Defense--in--Depth-2E8B57" alt="Security">
+  </a>
+  <a href="evaluation/">
+    <img src="https://img.shields.io/badge/Evaluation-Reproducible-6A5ACD" alt="Evaluation">
+  </a>
+</p>
 
 <p align="center">
   <a href="https://hendarmawan.se">
