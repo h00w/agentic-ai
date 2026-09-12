@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use Agentic AI Academy in teaching, research, or engineering work, please cite this repository."
+title: "Agentic AI Academy: Engineering Trustworthy AI Agents from Learning to Production"
+type: software
+authors:
+  - family-names: "Mawan"
+    given-names: "Hendar"
+    name-particle: ""
+version: 0.1.0
+date-released: 2026-09-12
+url: "https://github.com/h00w/agentic-ai"
+repository-code: "https://github.com/h00w/agentic-ai"
+license: MIT
+keywords:
+  - Agentic AI
+  - AI Engineering
+  - AI Architecture
+  - Trustworthy AI
+  - Secure AI
+  - Production AI
+  - AI Governance
+  - RAG
+  - Multi-Agent Systems
+  - Agent Evaluation
+abstract: >-
+  Agentic AI Academy is an open-source curriculum, engineering laboratory,
+  reference architecture, and professional portfolio for learning how to design,
+  build, evaluate, secure, operate, govern, and scale trustworthy AI agents.
