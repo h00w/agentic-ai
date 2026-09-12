@@ -13,7 +13,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ secrets.HF_TOKEN != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,4 +30,8 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_SPACE_REPO: h0000w/hendar-agentic-ai
         run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret is not configured."
+            exit 1
+          fi
           python scripts/publish_hf_space.py
