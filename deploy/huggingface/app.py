@@ -78,7 +78,10 @@ def policy_decision(tool_name: str, require_approval: bool) -> tuple[str, str]:
     if tool.risk == "high":
         return "REQUIRE_APPROVAL", "High-risk action requires a human approval gate."
     if require_approval:
-        return "REQUIRE_APPROVAL", "Demo policy is configured to require approval for tool execution."
+        return (
+            "REQUIRE_APPROVAL",
+            "Demo policy is configured to require approval for tool execution.",
+        )
     return "ALLOW", "Tool is permitted under the current bounded demo policy."
 
 
@@ -86,7 +89,9 @@ def research(query: str) -> tuple[str, str]:
     lowered = query.lower()
     ranked = sorted(
         KNOWLEDGE.items(),
-        key=lambda item: sum(term in item[0] or term in item[1].lower() for term in lowered.split()),
+        key=lambda item: sum(
+            term in item[0] or term in item[1].lower() for term in lowered.split()
+        ),
         reverse=True,
     )
     topic, answer = ranked[0]
@@ -224,7 +229,9 @@ with gr.Blocks(title="Agentic AI Playground", css=CSS, theme=gr.themes.Soft()) a
             wrap=True,
         )
         eval_summary = gr.Markdown()
-        evaluate.click(evaluate_answer, [candidate, evidence, policy_ok], [eval_table, eval_summary])
+        evaluate.click(
+            evaluate_answer, [candidate, evidence, policy_ok], [eval_table, eval_summary]
+        )
 
     with gr.Tab("Architecture"):
         gr.Markdown(
