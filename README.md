@@ -6,8 +6,6 @@
 
 **By Hendar Mawan, PhD**
 
-![Agentic AI — From Learning to Implementation to Scale]([assets/agenticai-banner.png](https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png))
-
 > **Hendar Mawan : AI Engineering Leader**  
 > AI Engineering · AI Architecture · Agentic AI · Secure AI · Edge AI · AI Governance
 
@@ -16,6 +14,12 @@
 [![Curriculum](https://img.shields.io/badge/Curriculum-14%20Modules-0B3D91)](curriculum/)
 [![Security](https://img.shields.io/badge/Security-Defense--in--Depth-2E8B57)](docs/security.md)
 [![Evaluation](https://img.shields.io/badge/Evaluation-Reproducible-6A5ACD)](evaluation/)
+
+<p align="center">
+  <a href="https://hendarmawan.se">
+    <img src="https://raw.githubusercontent.com/h00w/agentic-ai/refs/heads/main/agenticai-banner.png" alt="Agentic AI — From Learning to Implementation to Scale" width="920">
+  </a>
+</p>
 
 Agentic AI Academy is an open-source curriculum, engineering laboratory, reference architecture, and professional portfolio for learning how to design, build, evaluate, secure, operate, govern, and scale AI agents. It is deliberately framework-neutral: learners master the engineering concepts first, then apply those concepts using selected frameworks where they add value.
 
