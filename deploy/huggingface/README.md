@@ -63,6 +63,10 @@ Response + Audit Trace
 - Academy website: https://hendarmawan.se/agentic-ai/
 - Author: https://hendarmawan.se/
 
+## Deployment
+
+This directory is the curated public Space package for `h0000w/hendar-agentic-ai`. GitHub Actions publishes it using the repository secret `HF_TOKEN`, so the Hugging Face Space stays synchronized with the Academy source while remaining intentionally smaller than the canonical repository.
+
 ## Planned next iterations
 
 The first public release is intentionally framework-neutral and side-effect free. Future iterations can add optional Hugging Face inference, richer RAG, scenario-based evaluation and production observability while keeping policy and approval boundaries explicit.
