@@ -20,8 +20,13 @@ class AgentResult:
 class AgentController:
     """Deterministic teaching agent with explicit planning and policy gates."""
 
-    def __init__(self, tools: ToolRegistry, policy: PolicyEngine, max_steps: int = 6,
-                 trace: TraceRecorder | None = None) -> None:
+    def __init__(
+        self,
+        tools: ToolRegistry,
+        policy: PolicyEngine,
+        max_steps: int = 6,
+        trace: TraceRecorder | None = None,
+    ) -> None:
         if max_steps < 1:
             raise ValueError("max_steps must be >= 1")
         self.tools = tools
@@ -46,11 +51,19 @@ class AgentController:
             decisions.append(f"{tool_name}:{decision.value}")
             self.trace.record("policy", decisions[-1])
             if decision is PolicyDecision.DENY:
-                return AgentResult(f"Action blocked by policy: {tool_name}", state,
-                                   (perf_counter() - started) * 1000, tuple(decisions))
+                return AgentResult(
+                    f"Action blocked by policy: {tool_name}",
+                    state,
+                    (perf_counter() - started) * 1000,
+                    tuple(decisions),
+                )
             if decision is PolicyDecision.REQUIRE_APPROVAL:
-                return AgentResult(f"Human approval required before tool execution: {tool_name}", state,
-                                   (perf_counter() - started) * 1000, tuple(decisions))
+                return AgentResult(
+                    f"Human approval required before tool execution: {tool_name}",
+                    state,
+                    (perf_counter() - started) * 1000,
+                    tuple(decisions),
+                )
             output = self.tools.execute(tool_name, {"query": goal})
             state.observations.append(Observation(tool=tool_name, success=True, output=output))
             self.trace.record("tool", f"{tool_name} -> {output}")
