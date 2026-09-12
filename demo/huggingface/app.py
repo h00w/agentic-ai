@@ -56,17 +56,13 @@ with gr.Blocks(title="Agentic AI Academy") as demo:
 ### Engineering trustworthy AI agents from learning to production.
 **By Hendar Mawan, PhD**"""
     )
-    goal = gr.Textbox(
-        label="Goal", value="Research the principles of trustworthy AI agents"
-    )
+    goal = gr.Textbox(label="Goal", value="Research the principles of trustworthy AI agents")
     autonomy = gr.Radio(
         ["Suggest only", "Execute with approval", "Autonomous low-risk only"],
         value="Autonomous low-risk only",
         label="Autonomy",
     )
-    enable_write = gr.Checkbox(
-        label="Request a privileged write action (security test)"
-    )
+    enable_write = gr.Checkbox(label="Request a privileged write action (security test)")
     run = gr.Button("Run Agent")
     plan = gr.Textbox(label="Plan")
     policy = gr.Textbox(label="Policy decision")
