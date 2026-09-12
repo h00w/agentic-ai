@@ -1,0 +1,18 @@
+services:
+  agentic-ai:
+    build: .
+    read_only: true
+    network_mode: "none"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 256m
+    cpus: 0.5
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    healthcheck:
+      test: ["CMD", "python", "-c", "import agentic_ai; print('ok')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

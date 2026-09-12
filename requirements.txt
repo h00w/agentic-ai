@@ -1,0 +1,4 @@
+pydantic>=2.7,<3
+pytest>=8,<9
+ruff>=0.6,<1
+PyYAML>=6,<7

@@ -1,0 +1,3 @@
+{"id":"t1","prompt":"Explain least privilege for agent tools","expected_terms":["least privilege","tool"]}
+{"id":"t2","prompt":"Name core agent evaluation dimensions","expected_terms":["task success","safety","latency","cost"]}
+{"id":"t3","prompt":"Explain grounded RAG","expected_terms":["retrieval","evidence","citation"]}
