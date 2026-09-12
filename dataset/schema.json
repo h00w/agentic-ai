@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hendar Agentic AI Benchmark Record",
+  "type": "object",
+  "required": ["id", "domain", "input", "context", "expected", "expected_label", "risk_level", "tags", "rationale"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "enum": ["task_success", "tool_routing", "rag_groundedness", "prompt_injection", "unsafe_tool_requests", "policy_decisions", "multi_agent_tasks", "regression_cases"]},
+    "input": {"type": "string"},
+    "context": {"type": "string"},
+    "expected": {"type": "string"},
+    "expected_label": {"type": "string"},
+    "risk_level": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+    "tags": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "rationale": {"type": "string"},
+    "candidate_tools": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "attack_type": {"type": "string"},
+    "policy": {"type": "string"},
+    "agents": {"type": "array", "items": {"type": "string"}},
+    "regression_target": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,42 @@
+name: Deploy Hugging Face Dataset
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "dataset/**"
+      - "scripts/publish_hf_dataset.py"
+      - ".github/workflows/deploy-huggingface-dataset.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate benchmark dataset
+        run: python scripts/validate_benchmark_dataset.py
+
+      - name: Install Hugging Face Hub client
+        run: pip install "huggingface_hub>=0.28,<2"
+
+      - name: Publish benchmark dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_DATASET_REPO: h0000w/hendar-agentic-ai-dataset
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret is not configured."
+            exit 1
+          fi
+          python scripts/publish_hf_dataset.py
