@@ -67,6 +67,8 @@ Response + Audit Trace
 
 This directory is the curated public Space package for `h0000w/hendar-agentic-ai`. GitHub Actions publishes it using the repository secret `HF_TOKEN`, so the Hugging Face Space stays synchronized with the Academy source while remaining intentionally smaller than the canonical repository.
 
+Deployment trigger verified after configuring the GitHub Actions secret.
+
 ## Planned next iterations
 
 The first public release is intentionally framework-neutral and side-effect free. Future iterations can add optional Hugging Face inference, richer RAG, scenario-based evaluation and production observability while keeping policy and approval boundaries explicit.
