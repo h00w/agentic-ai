@@ -7,7 +7,11 @@ class SearchArguments(BaseModel):
 
 
 def search(arguments: SearchArguments) -> list[str]:
-    corpus = ["RAG grounds answers in retrieved evidence.", "Policy gates bound tool use.", "Evaluation detects regressions."]
+    corpus = [
+        "RAG grounds answers in retrieved evidence.",
+        "Policy gates bound tool use.",
+        "Evaluation detects regressions.",
+    ]
     return corpus[: arguments.limit]
 
 
