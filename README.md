@@ -4,10 +4,6 @@
 
 **EXPLORE • IMPLEMENT • SCALE**
 
-**By Hendar Mawan, PhD**
-
-> **Hendar Mawan : AI Engineering Leader**  
-> AI Engineering · AI Architecture · Agentic AI · Secure AI · Edge AI · AI Governance
 
 <p align="center">
   <a href="https://hendarmawan.se/agentic-ai/"><strong>Academy Website</strong></a> ·
@@ -41,6 +37,10 @@ This is not a collection of chatbot tutorials. The Academy treats agentic AI as 
 **Professional Academy page:** https://hendarmawan.se/agentic-ai/  
 **Interactive Hugging Face and Streamlit demos:** planned for the next deployment phase
 
+**By Hendar Mawan, PhD**
+
+> **Hendar Mawan : AI Engineering Leader**  
+> AI Engineering · AI Architecture · Agentic AI · Secure AI · Edge AI · AI Governance
 ---
 
 ## Why Agentic AI?
