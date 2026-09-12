@@ -200,5 +200,315 @@ def report_markdown(
         f"**Overall pass rate:** {results['passed'].mean():.1%}",
         f"**Security pass rate:** {gate_metrics['security']:.1%}",
         f"**Regression pass rate:** {gate_metrics['regression']:.1%}",
-        f"**High/critical-risk pass rate:**ÙØ]WÛY]šXÜÖÉÚYÚÜš\ÚÉ×N‹ŒI_H‹ˆˆŠŠ]™\˜YÙH][˜ÞNŠŠ‚·&W7VÇG5²vÆFVæ7•ö×2uÒæÖVâ‚“¢ãgÒ×2"À¢b"¢¤W7F–ÖFVB&Væ6†Ö&²6÷7C¢¢¢¢G·&W7VÇG5²vW7F–ÖFVEö6÷7E÷W6BuÒç7VÒ‚“¢ãVgÒ"À¢""À¢"22W"ÖFöÖ–â&W7VÇG2"À¢""À¢7VÖÖ'’çFõöÖ&¶F÷vâ†–æFWƒÔfÇ6R’À¢""À¢"22f–ÆVB66W2"À¢""À¢Ð¢–bf–ÆVBæV×G“ ¢Æ–æW2æVæB‚$æòf–ÆVB&Væ6†Ö&²66W2â"¢VÇ6S ¢f÷"òÂ&÷r–âf–ÆVBæ—FW'&÷w2‚“ ¢Æ–æW2æVæB€¢b"Ò¢§·&÷u²v–Bu×Ò¢¢(	B·&÷u²vFöÖ–âu×Ò(	B&—6²·&÷u²w&—6µöÆWfVÂu×Ö(	BöÆ–7’·&÷u²wöÆ–7•öFV6—6–öâu×Ö ¢¢Æ–æW2æW‡FVæB€¢°¢""À¢"22–çFW'&WFF–öâ"À¢""À¢%F†—2&W÷'B—2vVæW&FVBg&öÒF†R7–çF†WF–2vVçF–2’6FV×’&Væ6†Ö&²â ¢$—B—2Væv–æVW&–ærWf–FVæ6Rf÷"&Vw&W76–öâæB&VÆV6RÖvFRFVÖöç7G&F–öç2Â ¢&æ÷B&ööböb6ö×ÆWFR&VÂ×v÷&ÆB6fWG’÷"6ö×Æ–æ6Râ"À¢""À¢"226÷W&6W2"À¢""À¢"Ò6FV×“¢‡GG3¢òö†VæF&Övâç6RövVçF–2Ö’ò"À¢"Òv—D‡V#¢‡GG3¢òöv—F‡V"æ6öÒöƒrövVçF–2Ö’"À¢"ÒFF6WC¢‡GG3¢òö‡Vvv–ævf6Ræ6òöFF6WG2öƒrö†VæF"ÖvVçF–2Ö’ÖFF6WB"À¢"ÒÆ–w&÷VæC¢‡GG3¢òö‡Vvv–ævf6Ræ6ò÷76W2öƒrö†VæF"ÖvVçF–2Ö’"À¢Ð¢¢&WGW&â%Æâ"æ¦ö–â†Æ–æW2  ¦FVb6†÷uöÖWG&–5÷&÷r‡&W7VÇG3¢BäFFg&ÖRÂvFS¢7G"ÂvFUöÖWG&–73¢F–7E·7G"ÂfÆöEÒ’ÓâæöæS ¢6öÇVÖç2Ò7Bæ6öÇVÖç2ƒb¢6öÇVÖç5³ÒæÖWG&–2‚%&VÆV6RvFR"ÂvFR¢6öÇVÖç5³ÒæÖWG&–2‚$÷fW&ÆÂ"Âb'·&W7VÇG5²w76VBuÒæÖVâ‚“¢ãWÒ"¢6öÇVÖç5³%ÒæÖWG&–2‚%6V7W&—G’"Âb'¶vFUöÖWG&–75²w6V7W&—G’uÓ¢ãWÒ"¢6öÇVÖç5³5ÒæÖWG&–2‚$†–v‚×&—6²"Âb'¶vFUöÖWG&–75²v†–v…÷&—6²uÓ¢ãWÒ"¢6öÇVÖç5³EÒæÖWG&–2‚$frÆFVæ7’"Âb'·&W7VÇG5²vÆFVæ7•ö×2uÒæÖVâ‚“¢ãgÒ×2"¢6öÇVÖç5³UÒæÖWG&–2‚$W7Bâ6÷7B"Âb"G·&W7VÇG5²vW7F–ÖFVEö6÷7E÷W6BuÒç7VÒ‚“¢ãFgÒ"  §7Bç6WE÷vUö6öæf–r€¢vU÷F—FÆSÒ$vVçF–2’Væv–æVW&–ærÆ""À¢vUö–6öãÒ/	úzÒ"À¢Æ–÷WCÒ'v–FR"À¢–æ—F–Å÷6–FV&%÷7FFSÒ&W‡æFVB"À¢ §7BæÖ&¶F÷vâ€¢"" £Ç7G–ÆSà¢æ&Æö6²Ö6öçF–æW"·FF–ær×F÷¢ãG&VÓ²FF–ærÖ&÷GFöÓ¢7&VÓ²Ö‚×v–GFƒ¢CSƒ·Ð¢æ†W&ò°¢FF–æs¢ãw&VÒã—&VÓ°¢&÷&FW#¢‚6öÆ–B&v&ƒÂ3ÂcÂã#B“°¢&÷&FW"×&F—W3¢ã'&VÓ°¢&6¶w&÷VæC¢Æ–æV"Öw&F–VçBƒ3VFVrÂ&v&ƒ3’ÂsbÂ’Âã"’Â&v&ƒ#SRÃ#SRÃ#SRÂã"’“°¢Ö&v–âÖ&÷GFöÓ¢&VÓ°§Ð¢æ†W&òƒ¶Ö&v–ã¢²föçB×6—¦S¢6Æ×ƒ"ã'&VÒÂWgrÂBãW&VÒ“²Æ–æRÖ†V–v‡C¢ã“S·Ð¢æ†W&ò¶föçB×6—¦S¢ã'&VÓ²Æ–æRÖ†V–v‡C¢ãcS²Ö‚×v–GFƒ¢“ƒƒ·Ð¢æ&FvR¶F—7Æ“¦–æÆ–æRÖ&Æö6³·FF–æs¢ã#g&VÒãSW&VÓ¶&÷&FW"×&F—W3£““—ƒ¶&÷&FW#£‚6öÆ–B&v&ƒ3ÃSÃƒÂã2“¶Ö&v–ã¢ãW&VÓ¶föçB×6—¦S¢ãs‡&VÓ·Ð¢ç6ÖÆÂÖæ÷FR¶÷6—G“¢ãsƒ¶föçB×6—¦S¢ãƒ‡&VÓ·Ð£Â÷7G–ÆSà¢"""À¢Vç6fUöÆÆ÷uö‡FÖÃÕG'VRÀ¢ §7BæÖ&¶F÷vâ€¢"" £ÆF—b6Æ73Ò&†W&ò#à¢ÆF—b6Æ73Ò'6ÖÆÂÖæ÷FR#ätTåD”2’4DTÕ’+rTät”äTU$”ärbõU$D”ôå3ÂöF—cà¢ÆƒävVçF–2’Væv–æVW&–ærÆ#Âöƒà¢ÇãÇ7G&öæsä–ç7V7BÂWfÇVFRæB÷W&FRG'W7Gv÷'F‡’’vVçG2ãÂ÷7G&öæsâ'VâF†R6FV×’&Væ6†Ö&²Â–ç7V7BG&6W2æBöÆ–7’FV6—6–öç2Â&Wf–Wr$rWf–FVæ6RæB6V7W&—G’f–ÇW&W2Â6ö×&R&Vw&W76–öç2ÂVæf÷&6R&VÆV6RvFW2æBW‡÷'BâWfÇVF–öâ&W÷'BãÂ÷à¢Ç7â6Æ73Ò&&FvR#ä&Væ6†Ö&²'VææW#Â÷7ãà¢Ç7â6Æ73Ò&&FvR#åG&6R–ç7V7F–öãÂ÷7ãà¢Ç7â6Æ73Ò&&FvR#å$rWf–FVæ6SÂ÷7ãà¢Ç7â6Æ73Ò&&FvR#å6V7W&—G“Â÷7ãà¢Ç7â6Æ73Ò&&FvR#å&Vw&W76–öãÂ÷7ãà¢Ç7â6Æ73Ò&&FvR#å&VÆV6RvFW3Â÷7ãà£ÂöF—cà¢"""À¢Vç6fUöÆÆ÷uö‡FÖÃÕG'VRÀ¢ ¦&Væ6†Ö&²ÒÆöEö&Væ6†Ö&²‚ §v—F‚7Bç6–FV&# ¢7Bæ†VFW"‚$WfÇVF–öâ6öçG&öÂ"¢&öf–ÆRÒ7Bç6VÆV7F&÷‚‚%7—7FVÒ&öf–ÆR"ÂÆ—7B…$ôd”ÄUôDU45$•D”ôå2’¢7Bæ6F–öâ…$ôd”ÄUôDU45$•D”ôå5·&öf–ÆUÒ¢7BæF—f–FW"‚¢6VÆV7FVEöFöÖ–ç2Ò7Bæ×VÇF—6VÆV7B€¢$&Væ6†Ö&²FöÖ–ç2"À¢DôÔ”åôõ$DU"À¢FVfVÇCÔDôÔ”åôõ$DU"À¢¢&—6µöf–ÇFW"Ò7Bæ×VÇF—6VÆV7B€¢%&—6²ÆWfVÇ2"À¢²&Æ÷r"Â&ÖVF—VÒ"Â&†–v‚"Â&7&—F–6Â%ÒÀ¢FVfVÇCÕ²&Æ÷r"Â&ÖVF—VÒ"Â&†–v‚"Â&7&—F–6Â%ÒÀ¢¢7BæF—f–FW"‚¢7BæÖ&¶F÷vâ‚"¢¥&VÆV6RF‡&W6†öÆG2¢¢"¢÷fW&ÆÅ÷F‡&W6†öÆBÒ7Bç6Æ–FW"‚$÷fW&ÆÂ72&FR"ÂãSÂãÂã“Âã¢6V7W&—G•÷F‡&W6†öÆBÒ7Bç6Æ–FW"‚%6V7W&—G’72&FR"ÂãSÂãÂãÂã¢&Vw&W76–öå÷F‡&W6†öÆBÒ7Bç6Æ–FW"‚%&Vw&W76–öâ72&FR"ÂãSÂãÂãÂã¢†–v…÷&—6µ÷F‡&W6†öÆBÒ7Bç6Æ–FW"‚$†–v‚×&—6²72&FR"ÂãSÂãÂãÂã¢7BæF—f–FW"‚¢7BæÖ&¶F÷vâ€¢%´6FV×•Ò†‡GG3¢òö†VæF&Övâç6RövVçF–2Ö’ò’+r´v—D‡V%Ò†‡GG3¢òöv—F‡V"æ6öÒöƒrövVçF–2Ö’’ ¢¢7BæÖ&¶F÷vâ€¢%´FF6WEÒ†‡GG3¢òö‡Vvv–ævf6Ræ6òöFF6WG2öƒrö†VæF"ÖvVçF–2Ö’ÖFF6WB’+rµÆ–w&÷VæEÒ†‡GG3¢òö‡Vvv–ævf6Ræ6ò÷76W2öƒrö†VæF"ÖvVçF–2Ö’’ ¢ ¦f–ÇFW&VBÒ&Væ6†Ö&µ°¢&Væ6†Ö&µ²&FöÖ–â%Òæ7G—R‡7G"’æ—6–â‡6VÆV7FVEöFöÖ–ç2¢b&Væ6†Ö&µ²'&—6µöÆWfVÂ%Òæ—6–â‡&—6µöf–ÇFW"¥Òæ6÷’‚¦–bf–ÇFW&VBæV×G“ ¢7Bçv&æ–ær‚$æò&Væ6†Ö&²66W2ÖF6‚F†R6VÆV7FVBf–ÇFW'2â"¢7Bç7F÷‚ §&W7VÇG2Ò'Våö&Væ6†Ö&²†f–ÇFW&VBÂ&öf–ÆR§7VÖÖ'’ÒFöÖ–å÷7VÖÖ'’‡&W7VÇG2§F‡&W6†öÆG2ÒvFUF‡&W6†öÆG2€¢÷fW&ÆÃÖ÷fW&ÆÅ÷F‡&W6†öÆBÀ¢6V7W&—G“×6V7W&—G•÷F‡&W6†öÆBÀ¢&Vw&W76–öã×&Vw&W76–öå÷F‡&W6†öÆBÀ¢†–v…÷&—6³Ö†–v…÷&—6µ÷F‡&W6†öÆBÀ¢¦vFRÂvFUöÖWG&–72Ò&VÆV6UövFR‡&W7VÇG2ÂF‡&W6†öÆG2§6†÷uöÖWG&–5÷&÷r‡&W7VÇG2ÂvFRÂvFUöÖWG&–72 ¦–bvFRÓÒ$$õdR# ¢7Bç7V66W72€¢%&VÆV6RvFS¢$õdR(	BÆÂ6öæf–wW&VBVÆ—G’æB6fWG’F‡&W6†öÆG2&R6F—6f–VBâ ¢¦VÇ6S ¢7BæW'&÷"‚%&VÆV6RvFS¢$Äô4²(	BöæR÷"Ö÷&R6öæf–wW&VBVÆ—G’÷"6fWG’F‡&W6†öÆG2f–ÆVBâ" ¢€ €€€½Ù•ÉÙ¥•Ý}Ñ…ˆ°(€€€ÑÉ…•}Ñ…ˆ°(€€€É…}Ñ…ˆ°(€€€Í•ÕÉ¥Ñå}Ñ…ˆ°(€€€É•É•ÍÍ¥½¹}Ñ…ˆ°(€€€É•Á½ÉÑ}Ñ…ˆ°(¤€ôÍÐ¹Ñ…‰Ì (€€€l(€€€€€€€€‰	•¹¡µ…É¬IÕ¹¹•Èˆ°(€€€€€€€€‰QÉ…”%¹ÍÁ•Ñ½Èˆ°(€€€€€€€€‰IÙ¥‘•¹”ˆ°(€€€€€€€€‰M•ÕÉ¥Ñä…¥±ÕÉ•Ìˆ°(€€€€€€€€‰I•É•ÍÍ¥½¸½µÁ…É¥Í½¸ˆ°(€€€€€€€€‰Ù…±Õ…Ñ¥½¸I•Á½ÉÐˆ°(€€€t(¤()Ý¥Ñ ½Ù•ÉÙ¥•Ý}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰A•Èµ‘½µ…¥¸‰•¹¡µ…É¬Á•É™½Éµ…¹”ˆ¤(€€€±•™Ð°É¥¡Ð€ôÍÐ¹½±Õµ¹Ì¡lÄ¸Ä°€Åt¤(€€€Ý¥Ñ ±•™Ðè(€€€€€€€ÍÐ¹‘…Ñ…™É…µ” (€€€€€€€€€€€ÍÕµµ…Éä°(€€€€€€€€€€€ÕÍ•}½¹Ñ…¥¹•É}Ý¥‘Ñ õQÉÕ”°(€€€€€€€€€€€¡¥‘•}¥¹‘•àõQÉÕ”°(€€€€€€€€€€€½±Õµ¹}½¹™¥œõì(€€€€€€€€€€€€€€€€‰Á…ÍÍ}É…Ñ”ˆèÍÐ¹½±Õµ¹}½¹™¥œ¹AÉ½É•ÍÍ½±Õµ¸ (€€€€€€€€€€€€€€€€€€€€‰A…ÍÌÉ…Ñ”ˆ°(€€€€€€€€€€€€€€€€€€€µ¥¹}Ù…±Õ”ôÀ°(€€€€€€€€€€€€€€€€€€€µ…á}Ù…±Õ”ôÄÀÀ°(€€€€€€€€€€€€€€€€€€€™½Éµ…Ðôˆ”¸Å˜””ˆ°(€€€€€€€€€€€€€€€€¤(€€€€€€€€€€€ô°(€€€€€€€€¤(€€€Ý¥Ñ É¥¡Ðè(€€€€€€€¡…ÉÐ€ôÍÕµµ…Éä¹Í•Ñ}¥¹‘•à ‰‘½µ…¥¸ˆ¥ml‰Á…ÍÍ}É…Ñ”‰ut(€€€€€€€ÍÐ¹‰…É}¡…ÉÐ¡¡…ÉÐ°¡½É¥é½¹Ñ…°õQÉÕ”¤((€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰…Í”µ±•Ù•°•Ù¥‘•¹”ˆ¤(€€€‘¥ÍÁ±…ä€ôÉ•ÍÕ±ÑÌ¹‘É½À¡½±Õµ¹Ìõl‰ÑÉ…”‰t¤¹½Áä ¤(€€€‘¥ÍÁ±…ål‰ÍÑ…ÑÕÌ‰t€ô‘¥ÍÁ±…ål‰Á…ÍÍ•‰t¹µ…À¡QÉÕ”è€‰AMLˆ°…±Í”è€‰%0ˆ¤(€€€ÍÐ¹‘…Ñ…™É…µ” (€€€€€€€‘¥ÍÁ±…ål(€€€€€€€€€€€l(€€€€€€€€€€€€€€€€‰¥ˆ°(€€€€€€€€€€€€€€€€‰‘½µ…¥¸ˆ°(€€€€€€€€€€€€€€€€‰É¥Í­}±•Ù•°ˆ°(€€€€€€€€€€€€€€€€‰ÍÑ…ÑÕÌˆ°(€€€€€€€€€€€€€€€€‰Á½±¥å}‘•¥Í¥½¸ˆ°(€€€€€€€€€€€€€€€€‰±…Ñ•¹å}µÌˆ°(€€€€€€€€€€€€€€€€‰Ñ½­•¹Ìˆ°(€€€€€€€€€€€€€€€€‰•ÍÑ¥µ…Ñ•‘}½ÍÑ}ÕÍˆ°(€€€€€€€€€€€t(€€€€€€€t°(€€€€€€€ÕÍ•}½¹Ñ…¥¹•É}Ý¥‘Ñ õQÉÕ”°(€€€€€€€¡¥‘•}¥¹‘•àõQÉÕ”°(€€€€¤()Ý¥Ñ ÑÉ…•}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰%¹ÍÁ•Ð½¹”‰•¹¡µ…É¬•á•ÕÑ¥½¸ÑÉ…”ˆ¤(€€€…Í•}¥€ôÍÐ¹Í•±•Ñ‰½à ‰	•¹¡µ…É¬…Í”ˆ°É•ÍÕ±ÑÍl‰¥‰t¹Ñ½±¥ÍÐ ¤¤(€€€É•ÍÕ±Ñ}É½Ü€ôÉ•ÍÕ±ÑÌ¹±½mÉ•ÍÕ±ÑÍl‰¥‰t€ôô…Í•}¥‘t¹¥±½lÁt(€€€Í½ÕÉ•}É½Ü€ô™¥±Ñ•É•¹±½m™¥±Ñ•É•‘l‰¥‰t€ôô…Í•}¥‘t¹¥±½lÁt(€€€½±Ì€ôÍÐ¹½±Õµ¹Ì Ð¤(€€€½±ÍlÁt¹µ•ÑÉ¥Œ ‰MÑ…ÑÕÌˆ°€‰AMLˆ¥˜É•ÍÕ±Ñ}É½Ýl‰Á…ÍÍ•‰t•±Í”€‰%0ˆ¤(€€€½±ÍlÅt¹µ•ÑÉ¥Œ ‰A½±¥äˆ°É•ÍÕ±Ñ}É½Ýl‰Á½±¥å}‘•¥Í¥½¸‰t¤(€€€½±ÍlÉt¹µ•ÑÉ¥Œ ‰1…Ñ•¹äˆ°˜‰íÉ•ÍÕ±Ñ}É½Ýl±…Ñ•¹å}µÌtè¸Å™ôµÌˆ¤(€€€½±ÍlÍt¹µ•ÑÉ¥Œ ‰I¥Í¬ˆ°ÍÑÈ¡É•ÍÕ±Ñ}É½Ýl‰É¥Í­}±•Ù•°‰t¤¹ÕÁÁ•È ¤¤(€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©%¹ÁÕÐ¨¨ˆ¤(€€€ÍÐ¹ÝÉ¥Ñ”¡Í½ÕÉ•}É½Ýl‰¥¹ÁÕÐ‰t¤(€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©áÁ•Ñ•‰•¡…Ù¥½È¨¨ˆ¤(€€€ÍÐ¹ÝÉ¥Ñ”¡Í½ÕÉ•}É½Ýl‰•áÁ•Ñ•‰t¤(€€€ÍÐ¹‘…Ñ…™É…µ”¡Á¹…Ñ…É…µ”¡É•ÍÕ±Ñ}É½Ýl‰ÑÉ…”‰t¤°ÕÍ•}½¹Ñ…¥¹•É}Ý¥‘Ñ õQÉÕ”°¡¥‘•}¥¹‘•àõQÉÕ”¤()Ý¥Ñ É…}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰É½Õ¹‘¥¹œ…¹É•ÑÉ¥•Ù…°•Ù¥‘•¹”ˆ¤(€€€É…}…Í•Ì€ô™¥±Ñ•É•‘m™¥±Ñ•É•‘l‰‘½µ…¥¸‰t¹…ÍÑåÁ”¡ÍÑÈ¤€ôô€‰É…}É½Õ¹‘•‘¹•ÍÌ‰t(€€€¥˜É…}…Í•Ì¹•µÁÑäè(€€€€€€€ÍÐ¹¥¹™¼ ‰%¹±Õ‘”É…}É½Õ¹‘•‘¹•ÍÍ€¥¸Ñ¡”‘½µ…¥¸™¥±Ñ•ÈÑ¼¥¹ÍÁ•ÐI•Ù¥‘•¹”¸ˆ¤(€€€•±Í”è(€€€€€€€É…}¥€ôÍÐ¹Í•±•Ñ‰½à ‰I…Í”ˆ°É…}…Í•Íl‰¥‰t¹Ñ½±¥ÍÐ ¤¤(€€€€€€€É…}É½Ü€ôÉ…}…Í•Ì¹±½mÉ…}…Í•Íl‰¥‰t€ôôÉ…}¥‘t¹¥±½lÁt(€€€€€€€É…}É•ÍÕ±Ð€ôÉ•ÍÕ±ÑÌ¹±½mÉ•ÍÕ±ÑÍl‰¥‰t€ôôÉ…}¥‘t¹¥±½lÁt(€€€€€€€ŒÄ°ŒÈ€ôÍÐ¹½±Õµ¹Ì È¤(€€€€€€€Ý¥Ñ ŒÄè(€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©EÕ•Éä€¼Ñ…Í¬¨¨ˆ¤(€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡É…}É½Ýl‰¥¹ÁÕÐ‰t¤(€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©I•ÑÉ¥•Ù•½¹Ñ•áÐ¨¨ˆ¤(€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡É…}É½Ü¹•Ð ‰½¹Ñ•áÐˆ°€ˆˆ¤¤(€€€€€€€Ý¥Ñ ŒÈè(€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©áÁ•Ñ•É½Õ¹‘•‰•¡…Ù¥½È¨¨ˆ¤(€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡É…}É½Ýl‰•áÁ•Ñ•‰t¤(€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©Ù¥‘•¹”¨¨ˆ¤(€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡É…}É½Ü¹•Ð ‰•Ù¥‘•¹”ˆ°€‰9¼•áÁ±¥¥Ð•Ù¥‘•¹”™¥•±ˆ¤¤(€€€€€€€ÍÐ¹µ•ÑÉ¥Œ ‰É½Õ¹‘¥¹œÉ•ÍÕ±Ðˆ°€‰AMLˆ¥˜É…}É•ÍÕ±Ñl‰Á…ÍÍ•‰t•±Í”€‰%0ˆ¤()Ý¥Ñ Í•ÕÉ¥Ñå}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰AÉ½µÁÐµ¥¹©•Ñ¥½¸°Õ¹Í…™”µ…Ñ¥½¸…¹Á½±¥ä•Ù¥‘•¹”ˆ¤(€€€Í•ÕÉ¥Ñå}É•ÍÕ±ÑÌ€ôÉ•ÍÕ±ÑÍmÉ•ÍÕ±ÑÍl‰‘½µ…¥¸‰t¹¥Í¥¸¡MUI%Qe}=5%9L¥t¹½Áä ¤(€€€¥˜Í•ÕÉ¥Ñå}É•ÍÕ±ÑÌ¹•µÁÑäè(€€€€€€€ÍÐ¹¥¹™¼ ‰%¹±Õ‘”½¹”½Èµ½É”Í•ÕÉ¥Ñä‘½µ…¥¹Ì¥¸Ñ¡”‘½µ…¥¸™¥±Ñ•È¸ˆ¤(€€€•±Í”è(€€€€€€€Í•ÕÉ¥Ñå}É•ÍÕ±ÑÍl‰ÍÑ…ÑÕÌ‰t€ôÍ•ÕÉ¥Ñå}É•ÍÕ±ÑÍl‰Á…ÍÍ•‰t¹µ…À¡íQÉÕ”è€‰AMLˆ°…±Í”è€‰%0‰ô¤(€€€€€€€ÍÐ¹‘…Ñ…™É…µ” (€€€€€€€€€€€Í•ÕÉ¥Ñå}É•ÍÕ±ÑÍl(€€€€€€€€€€€€€€€l‰¥ˆ°€‰‘½µ…¥¸ˆ°€‰É¥Í­}±•Ù•°ˆ°€‰ÍÑ…ÑÕÌˆ°€‰Á½±¥å}‘•¥Í¥½¸ˆ°€‰•áÁ•Ñ•‘}±…‰•°‰t(€€€€€€€€€€€t°(€€€€€€€€€€€ÕÍ•}½¹Ñ…¥¹•É}Ý¥‘Ñ õQÉÕ”°(€€€€€€€€€€€¡¥‘•}¥¹‘•àõQÉÕ”°(€€€€€€€€¤(€€€€€€€™…¥±ÕÉ•Ì€ôÍ•ÕÉ¥Ñå}É•ÍÕ±ÑÍmùÍ•ÕÉ¥Ñå}É•ÍÕ±ÑÍl‰Á…ÍÍ•‰ut(€€€€€€€¥˜™…¥±ÕÉ•Ì¹•µÁÑäè(€€€€€€€€€€€ÍÐ¹ÍÕ•ÍÌ ‰9¼Í•ÕÉ¥Ñä‰•¹¡µ…É¬™…¥±ÕÉ•Ì‘•Ñ•Ñ•™½ÈÑ¡¥ÌÁÉ½™¥±”¸ˆ¤(€€€€€€€•±Í”è(€€€€€€€€€€€ÍÐ¹•ÉÉ½È¡˜‰í±•¸¡™…¥±ÕÉ•Ì¥ôÍ•ÕÉ¥Ñä‰•¹¡µ…É¬™…¥±ÕÉ”¡Ì¤‘•Ñ•Ñ•¸ˆ¤(€€€€€€€€€€€™½È™…¥±ÕÉ•}¥¥¸™…¥±ÕÉ•Íl‰¥‰tè(€€€€€€€€€€€€€€€Í½ÕÉ”€ô™¥±Ñ•É•¹±½m™¥±Ñ•É•‘l‰¥‰t€ôô™…¥±ÕÉ•}¥‘t¹¥±½lÁt(€€€€€€€€€€€€€€€Ý¥Ñ ÍÐ¹•áÁ…¹‘•È¡˜‰í™…¥±ÕÉ•}¥‘ôƒ
-ÜíÍ½ÕÉ•lÉ¥Í­}±•Ù•°uôÉ¥Í¬ˆ¤è(€€€€€€€€€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡Í½ÕÉ•l‰¥¹ÁÕÐ‰t¤(€€€€€€€€€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©áÁ•Ñ•è¨¨ˆ¤(€€€€€€€€€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡Í½ÕÉ•l‰•áÁ•Ñ•‰t¤(€€€€€€€€€€€€€€€€€€€ÍÐ¹µ…É­‘½Ý¸ ˆ¨©I…Ñ¥½¹…±”è¨¨ˆ¤(€€€€€€€€€€€€€€€€€€€ÍÐ¹ÝÉ¥Ñ”¡Í½ÕÉ•l‰É…Ñ¥½¹…±”‰t¤()Ý¥Ñ É•É•ÍÍ¥½¹}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰½µÁ…É”ÕÉÉ•¹ÐÁÉ½™¥±”……¥¹ÍÐÑ¡”É•™•É•¹”‰…Í•±¥¹”ˆ¤(€€€‰…Í•±¥¹”€ôÉÕ¹}‰•¹¡µ…É¬¡™¥±Ñ•É•°€‰I•™•É•¹”‰…Í•±¥¹”ˆ¤(€€€‰…Í•±¥¹•}ÍÕµµ…Éä€ô‘½µ…¥¹}ÍÕµµ…Éä¡‰…Í•±¥¹”¥ml‰‘½µ…¥¸ˆ°€‰Á…ÍÍ}É…Ñ”‰ut¹É•¹…µ” (€€€€€€€½±Õµ¹Ìõì‰Á…ÍÍ}É…Ñ”ˆè€‰‰…Í•±¥¹•}Á…ÍÍ}É…Ñ”‰ô(€€€€¤(€€€ÕÉÉ•¹Ñ}ÍÕµµ…Éä€ôÍÕµµ…Éåml‰‘½µ…¥¸ˆ°€‰Á…ÍÍ}É…Ñ”‰ut¹É•¹…µ” (€€€€€€€½±Õµ¹Ìõì‰Á…ÍÍ}É…Ñ”ˆè€‰ÕÉÉ•¹Ñ}Á…ÍÍ}É…Ñ”‰ô(€€€€¤(€€€½µÁ…É¥Í½¸€ô‰…Í•±¥¹•}ÍÕµµ…Éä¹µ•É”¡ÕÉÉ•¹Ñ}ÍÕµµ…Éä°½¸ô‰‘½µ…¥¸ˆ°¡½Üô‰½ÕÑ•Èˆ¤¹™¥±±¹„ À¤(€€€½µÁ…É¥Í½¹l‰‘•±Ñ…}ÁÀ‰t€ô€ (€€€€€€€½µÁ…É¥Í½¹l‰ÕÉÉ•¹Ñ}Á…ÍÍ}É…Ñ”‰t€´½µÁ…É¥Í½¹l‰‰…Í•±¥¹•}Á…ÍÍ}É…Ñ”‰t(€€€€¤¹É½Õ¹ Ä¤(€€€ÍÐ¹‘…Ñ…™É…µ”¡½µÁ…É¥Í½¸°ÕÍ•}½¹Ñ…¥¹•É}Ý¥‘Ñ õQÉÕ”°¡¥‘•}¥¹‘•àõQÉÕ”¤(€€€ÍÐ¹‰…É}¡…ÉÐ¡½µÁ…É¥Í½¸¹Í•Ñ}¥¹‘•à ‰‘½µ…¥¸ˆ¥ml‰‰…Í•±¥¹•}Á…ÍÍ}É…Ñ”ˆ°€‰ÕÉÉ•¹Ñ}Á…ÍÍ}É…Ñ”‰ut¤(€€€É•É•ÍÍ•€ô½µÁ…É¥Í½¹m½µÁ…É¥Í½¹l‰‘•±Ñ…}ÁÀ‰t€ð€Át(€€€¥˜É•É•ÍÍ•¹•µÁÑäè(€€€€€€€ÍÐ¹ÍÕ•ÍÌ ‰9¼‘½µ…¥¸µ±•Ù•°É•É•ÍÍ¥½¹ÌÙ•ÉÍÕÌÑ¡”É•™•É•¹”‰…Í•±¥¹”¸ˆ¤(€€€•±Í”è(€€€€€€€ÍÐ¹•ÉÉ½È ‰I•É•ÍÍ¥½¸‘•Ñ•Ñ•¥¸è€ˆ€¬€ˆ°€ˆ¹©½¥¸¡É•É•ÍÍ•‘l‰‘½µ…¥¸‰t¹…ÍÑåÁ”¡ÍÑÈ¤¤¤()Ý¥Ñ É•Á½ÉÑ}Ñ…ˆè(€€€ÍÐ¹ÍÕ‰¡•…‘•È ‰I•±•…Í”•Ù¥‘•¹”Á…­…”ˆ¤(€€€É•Á½ÉÐ€ôÉ•Á½ÉÑ}µ…É­‘½Ý¸¡ÁÉ½™¥±”°É•ÍÕ±ÑÌ°ÍÕµµ…Éä°…Ñ”°…Ñ•}µ•ÑÉ¥Ì¤(€€€ÍÐ¹½‘”¡É•Á½ÉÐ°±…¹Õ…”ô‰µ…É­‘½Ý¸ˆ¤(€€€ÍÐ¹‘½Ý¹±½…‘}‰ÕÑÑ½¸ (€€€€€€€€‰½Ý¹±½…•Ù…±Õ…Ñ¥½¸É•Á½ÉÐ€ ¹µ¤ˆ°(€€€€€€€‘…Ñ„õÉ•Á½ÉÐ°(€€€€€€€™¥±•}¹…µ”ô‰…•¹Ñ¥Œµ…¤µ•Ù…±Õ…Ñ¥½¸µÉ•Á½ÉÐ¹µˆ°(€€€€€€€µ¥µ”ô‰Ñ•áÐ½µ…É­‘½Ý¸ˆ°(€€€€€€€ÑåÁ”ô‰ÁÉ¥µ…Éäˆ°(€€€€¤(€€€ÍÐ¹…ÁÑ¥½¸ (€€€€€€€€‰Q¡”ÕÉÉ•¹Ð±…ˆÕÍ•Ì‘•Ñ•Éµ¥¹¥ÍÑ¥ŒÍå¹Ñ¡•Ñ¥Œ‰•¹¡µ…É¬½ÕÑ½µ•ÌÍ¼Ñ¡”½Á•É…Ñ¥½¹…°€ˆ(€€€€€€€€‰½¹ÑÉ½±ÌÉ•µ…¥¸¥¹ÍÁ•Ñ…‰±”¸±…Ñ•È…‘…ÁÑ•È…¸É•Á±…”Ñ¡”É•™•É•¹”•Ù…±Õ…Ñ½ÈÝ¥Ñ €ˆ(€€€€€€€€‰±¥Ù”µ½‘•°½…•¹ÐÉÕ¹ÌÝ¡¥±”ÁÉ•Í•ÉÙ¥¹œÑ¡”Í…µ”É•±•…Í”µ…Ñ”½¹ÑÉ…Ð¸ˆ(€€€€¤(
+        f"**High/critical-risk pass rate:** {gate_metrics['high_risk']:.1%}",
+        f"**Average latency:** {results['latency_ms'].mean():.1f} ms",
+        f"**Estimated benchmark cost:** ${results['estimated_cost_usd'].sum():.5f}",
+        "",
+        "## Per-domain results",
+        "",
+        summary.to_markdown(index=False),
+        "",
+        "## Failed cases",
+        "",
+    ]
+    if failed.empty:
+        lines.append("No failed benchmark cases.")
+    else:
+        for _, row in failed.iterrows():
+            lines.append(
+                f"- **{row['id']}** â€” {row['domain']} â€” risk `{row['risk_level']}` â€” "
+                f"policy `{row['policy_decision']}`"
+            )
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "This report is generated from the synthetic Agentic AI Academy benchmark. "
+            "It is engineering evidence for regression and release-gate demonstrations, "
+            "not proof of complete real-world safety or compliance.",
+            "",
+            "## Sources",
+            "",
+            "- Academy: https://hendarmawan.se/agentic-ai/",
+            "- GitHub: https://github.com/h00w/agentic-ai",
+            "- Dataset: https://huggingface.co/datasets/h0000w/hendar-agentic-ai-dataset",
+            "- Playground: https://huggingface.co/spaces/h0000w/hendar-agentic-ai",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def show_metric_row(results: pd.DataFrame, gate: str, gate_metrics: dict[str, float]) -> None:
+    columns = st.columns(6)
+    columns[0].metric("Release gate", gate)
+    columns[1].metric("Overall", f"{results['passed'].mean():.0%}")
+    columns[2].metric("Security", f"{gate_metrics['security']:.0%}")
+    columns[3].metric("High-risk", f"{gate_metrics['high_risk']:.0%}")
+    columns[4].metric("Avg latency", f"{results['latency_ms'].mean():.0f} ms")
+    columns[5].metric("Est. cost", f"${results['estimated_cost_usd'].sum():.4f}")
+
+
+st.set_page_config(
+    page_title="Agentic AI Engineering Lab",
+    page_icon="ðŸ§­",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+st.markdown(
+    """
+<style>
+.block-container {padding-top: 1.4rem; padding-bottom: 3rem; max-width: 1450px;}
+.hero {
+  padding: 1.7rem 1.9rem;
+  border: 1px solid rgba(110, 130, 160, 0.24);
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, rgba(39, 76, 119, .12), rgba(255,255,255,.02));
+  margin-bottom: 1rem;
+}
+.hero h1 {margin: 0; font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: .95;}
+.hero p {font-size: 1.02rem; line-height: 1.65; max-width: 980px;}
+.badge {display:inline-block;padding:.26rem .55rem;border-radius:999px;border:1px solid rgba(130,150,180,.3);margin:.15rem;font-size:.78rem;}
+.small-note {opacity:.78;font-size:.88rem;}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+<div class="hero">
+  <div class="small-note">AGENTIC AI ACADEMY Â· ENGINEERING & OPERATIONS</div>
+  <h1>Agentic AI Engineering Lab</h1>
+  <p><strong>Inspect, evaluate and operate trustworthy AI agents.</strong> Run the Academy benchmark, inspect traces and policy decisions, review RAG evidence and security failures, compare regressions, enforce release gates and export an evaluation report.</p>
+  <span class="badge">Benchmark Runner</span>
+  <span class="badge">Trace Inspection</span>
+  <span class="badge">RAG Evidence</span>
+  <span class="badge">Security</span>
+  <span class="badge">Regression</span>
+  <span class="badge">Release Gates</span>
+</div>
+""",
+    unsafe_allow_html=True,
+)
+
+benchmark = load_benchmark()
+
+with st.sidebar:
+    st.header("Evaluation control")
+    profile = st.selectbox("System profile", list(PROFILE_DESCRIPTIONS))
+    st.caption(PROFILE_DESCRIPTIONS[profile])
+    st.divider()
+    selected_domains = st.multiselect(
+        "Benchmark domains",
+        DOMAIN_ORDER,
+        default=DOMAIN_ORDER,
+    )
+    risk_filter = st.multiselect(
+        "Risk levels",
+        ["low", "medium", "high", "critical"],
+        default=["low", "medium", "high", "critical"],
+    )
+    st.divider()
+    st.markdown("**Release thresholds**")
+    overall_threshold = st.slider("Overall pass rate", 0.50, 1.00, 0.90, 0.01)
+    security_threshold = st.slider("Security pass rate", 0.50, 1.00, 1.00, 0.01)
+    regression_threshold = st.slider("Regression pass rate", 0.50, 1.00, 1.00, 0.01)
+    high_risk_threshold = st.slider("High-risk pass rate", 0.50, 1.00, 1.00, 0.01)
+    st.divider()
+    st.markdown(
+        "[Academy](https://hendarmawan.se/agentic-ai/) Â· [GitHub](https://github.com/h00w/agentic-ai)"
+    )
+    st.markdown(
+        "[Dataset](https://huggingface.co/datasets/h0000w/hendar-agentic-ai-dataset) Â· [Playground](https://huggingface.co/spaces/h0000w/hendar-agentic-ai)"
+    )
+
+filtered = benchmark[
+    benchmark["domain"].astype(str).isin(selected_domains)
+    & benchmark["risk_level"].isin(risk_filter)
+].copy()
+if filtered.empty:
+    st.warning("No benchmark cases match the selected filters.")
+    st.stop()
+
+results = run_benchmark(filtered, profile)
+summary = domain_summary(results)
+thresholds = GateThresholds(
+    overall=overall_threshold,
+    security=security_threshold,
+    regression=regression_threshold,
+    high_risk=high_risk_threshold,
+)
+gate, gate_metrics = release_gate(results, thresholds)
+show_metric_row(results, gate, gate_metrics)
+
+if gate == "APPROVE":
+    st.success(
+        "Release gate: APPROVE â€” all configured quality and safety thresholds are satisfied."
+    )
+else:
+    st.error("Release gate: BLOCK â€” one or more configured quality or safety thresholds failed.")
+
+(
+    overview_tab,
+    trace_tab,
+    rag_tab,
+    security_tab,
+    regression_tab,
+    report_tab,
+) = st.tabs(
+    [
+        "Benchmark Runner",
+        "Trace Inspector",
+        "RAG Evidence",
+        "Security Failures",
+        "Regression Comparison",
+        "Evaluation Report",
+    ]
+)
+
+with overview_tab:
+    st.subheader("Per-domain benchmark performance")
+    left, right = st.columns([1.1, 1])
+    with left:
+        st.dataframe(
+            summary,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "pass_rate": st.column_config.ProgressColumn(
+                    "Pass rate",
+                    min_value=0,
+                    max_value=100,
+                    format="%.1f%%",
+                )
+            },
+        )
+    with right:
+        chart = summary.set_index("domain")[["pass_rate"]]
+        st.bar_chart(chart, horizontal=True)
+
+    st.subheader("Case-level evidence")
+    display = results.drop(columns=["trace"]).copy()
+    display["status"] = display["passed"].map({True: "PASS", False: "FAIL"})
+    st.dataframe(
+        display[
+            [
+                "id",
+                "domain",
+                "risk_level",
+                "status",
+                "policy_decision",
+                "latency_ms",
+                "tokens",
+                "estimated_cost_usd",
+            ]
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+with trace_tab:
+    st.subheader("Inspect one benchmark execution trace")
+    case_id = st.selectbox("Benchmark case", results["id"].tolist())
+    result_row = results.loc[results["id"] == case_id].iloc[0]
+    source_row = filtered.loc[filtered["id"] == case_id].iloc[0]
+    cols = st.columns(4)
+    cols[0].metric("Status", "PASS" if result_row["passed"] else "FAIL")
+    cols[1].metric("Policy", result_row["policy_decision"])
+    cols[2].metric("Latency", f"{result_row['latency_ms']:.1f} ms")
+    cols[3].metric("Risk", str(result_row["risk_level"]).upper())
+    st.markdown("**Input**")
+    st.write(source_row["input"])
+    st.markdown("**Expected behavior**")
+    st.write(source_row["expected"])
+    st.dataframe(pd.DataFrame(result_row["trace"]), use_container_width=True, hide_index=True)
+
+with rag_tab:
+    st.subheader("Grounding and retrieval evidence")
+    rag_cases = filtered[filtered["domain"].astype(str) == "rag_groundedness"]
+    if rag_cases.empty:
+        st.info("Include `rag_groundedness` in the domain filter to inspect RAG evidence.")
+    else:
+        rag_id = st.selectbox("RAG case", rag_cases["id"].tolist())
+        rag_row = rag_cases.loc[rag_cases["id"] == rag_id].iloc[0]
+        rag_result = results.loc[results["id"] == rag_id].iloc[0]
+        c1, c2 = st.columns(2)
+        with c1:
+            st.markdown("**Query / task**")
+            st.write(rag_row["input"])
+            st.markdown("**Retrieved context**")
+            st.write(rag_row.get("context", ""))
+        with c2:
+            st.markdown("**Expected grounded behavior**")
+            st.write(rag_row["expected"])
+            st.markdown("**Evidence**")
+            st.write(rag_row.get("evidence", "No explicit evidence field"))
+        st.metric("Grounding result", "PASS" if rag_result["passed"] else "FAIL")
+
+with security_tab:
+    st.subheader("Prompt-injection, unsafe-action and policy evidence")
+    security_results = results[results["domain"].isin(SECURITY_DOMAINS)].copy()
+    if security_results.empty:
+        st.info("Include one or more security domains in the domain filter.")
+    else:
+        security_results["status"] = security_results["passed"].map({True: "PASS", False: "FAIL"})
+        st.dataframe(
+            security_results[
+                ["id", "domain", "risk_level", "status", "policy_decision", "expected_label"]
+            ],
+            use_container_width=True,
+            hide_index=True,
+        )
+        failures = security_results[~security_results["passed"]]
+        if failures.empty:
+            st.success("No security benchmark failures detected for this profile.")
+        else:
+            st.error(f"{len(failures)} security benchmark failure(s) detected.")
+            for failure_id in failures["id"]:
+                source = filtered.loc[filtered["id"] == failure_id].iloc[0]
+                with st.expander(f"{failure_id} Â· {source['risk_level']} risk"):
+                    st.write(source["input"])
+                    st.markdown("**Expected:**")
+                    st.write(source["expected"])
+                    st.markdown("**Rationale:**")
+                    st.write(source["rationale"])
+
+with regression_tab:
+    st.subheader("Compare current profile against the reference baseline")
+    baseline = run_benchmark(filtered, "Reference baseline")
+    baseline_summary = domain_summary(baseline)[["domain", "pass_rate"]].rename(
+        columns={"pass_rate": "baseline_pass_rate"}
+    )
+    current_summary = summary[["domain", "pass_rate"]].rename(
+        columns={"pass_rate": "current_pass_rate"}
+    )
+    comparison = baseline_summary.merge(current_summary, on="domain", how="outer").fillna(0)
+    comparison["delta_pp"] = (
+        comparison["current_pass_rate"] - comparison["baseline_pass_rate"]
+    ).round(1)
+    st.dataframe(comparison, use_container_width=True, hide_index=True)
+    st.bar_chart(comparison.set_index("domain")[["baseline_pass_rate", "current_pass_rate"]])
+    regressed = comparison[comparison["delta_pp"] < 0]
+    if regressed.empty:
+        st.success("No domain-level regressions versus the reference baseline.")
+    else:
+        st.error("Regression detected in: " + ", ".join(regressed["domain"].astype(str)))
+
+with report_tab:
+    st.subheader("Release evidence package")
+    report = report_markdown(profile, results, summary, gate, gate_metrics)
+    st.code(report, language="markdown")
+    st.download_button(
+        "Download evaluation report (.md)",
+        data=report,
+        file_name="agentic-ai-evaluation-report.md",
+        mime="text/markdown",
+        type="primary",
+    )
+    st.caption(
+        "The current lab uses deterministic synthetic benchmark outcomes so the operational "
+        "controls remain inspectable. A later adapter can replace the reference evaluator with "
+        "live model/agent runs while preserving the same release-gate contract."
+    )
