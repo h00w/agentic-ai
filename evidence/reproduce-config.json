@@ -1,0 +1,16 @@
+{
+  "name": "Agentic AI Academy",
+  "subject_type": "agent_system",
+  "repository": "https://github.com/h00w/agentic-ai",
+  "version": "0.1.0",
+  "verification_command": "pytest -q && python scripts/validate_examples.py && python scripts/validate_benchmark_dataset.py",
+  "dependency_patterns": ["pyproject.toml", "requirements*.txt", "deploy/**/requirements*.txt"],
+  "input_patterns": ["src/**/*.py", "examples/**/*.py", "evaluation/**/*.py"],
+  "benchmark_name": "Hendar Agentic AI Evaluation & Security Benchmark",
+  "benchmark_version": "0.1.0",
+  "benchmark_patterns": ["dataset/**/*.json", "dataset/**/*.jsonl", "evaluation/**/*.json", "evaluation/**/*.jsonl"],
+  "policy_name": "Agentic AI governance and security controls",
+  "policy_version": "1",
+  "policy_patterns": ["docs/security.md", "docs/agent-governance-checklist.md", "docs/agent-risk-register.md", "docs/deployment-playbook.md"],
+  "approvals_required": false
+}
