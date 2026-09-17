@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Generate a Production AI Evidence Contract v1 reproduction bundle."""
 
 from __future__ import annotations
@@ -30,7 +29,7 @@ def run_text(cmd):
             text=True,
             stderr=subprocess.DEVNULL,
         ).strip()
-    except Exception:
+    except (OSError, subprocess.SubprocessError):
         return None
 
 
@@ -74,7 +73,7 @@ def command_version(cmd):
             text=True,
             stderr=subprocess.DEVNULL,
         ).strip()
-    except Exception:
+    except (OSError, subprocess.SubprocessError):
         return None
 
 
@@ -101,6 +100,7 @@ def main():
         shell=True,
         text=True,
         capture_output=True,
+        check=False,
     )
     duration = round(time.monotonic() - started, 3)
 
