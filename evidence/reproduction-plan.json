@@ -1,0 +1,29 @@
+{
+  "project": {
+    "name": "Agentic AI Academy",
+    "repository_name": "h00w/agentic-ai",
+    "repository_url": "https://github.com/h00w/agentic-ai",
+    "subject_type": "agentic-system",
+    "version": "0.1.0"
+  },
+  "inputs": [
+    {"path": "dataset", "kind": "evaluation-benchmark"},
+    {"path": "evaluation", "kind": "evaluation-engine"},
+    {"path": "src/agentic_ai", "kind": "reference-implementation"},
+    {"path": "docs/security.md", "kind": "security-policy"},
+    {"path": "pyproject.toml", "kind": "dependency-manifest"}
+  ],
+  "steps": [
+    {"name": "unit-and-integration-tests", "command": ["{python}", "-m", "pytest", "-q"], "cwd": "."},
+    {"name": "example-validation", "command": ["{python}", "scripts/validate_examples.py"], "cwd": "."},
+    {"name": "documentation-link-check", "command": ["{python}", "scripts/check_links.py"], "cwd": "."},
+    {"name": "benchmark-schema-validation", "command": ["{python}", "scripts/validate_benchmark_dataset.py"], "cwd": "."}
+  ],
+  "domain_decision": null,
+  "domain_decision_source": "Engineering Lab release-gate configuration",
+  "notes": [
+    "The default reproduction path requires no external model API key.",
+    "The benchmark remains synthetic and expert-authored; reproduction verifies the declared benchmark and engineering controls, not external-world validity.",
+    "A successful reproduction does not imply that an arbitrary agent configuration is authorized for production."
+  ]
+}
