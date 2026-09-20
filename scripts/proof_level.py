@@ -91,7 +91,12 @@ def external_evidence(items: list[dict], offline: bool) -> tuple[bool, list[dict
 
 
 def level_record(level: int, name: str, passed: bool, reason: str) -> dict:
-    return {"level": level, "name": name, "status": "PASS" if passed else "NOT_PROVEN", "reason": reason}
+    return {
+        "level": level,
+        "name": name,
+        "status": "PASS" if passed else "NOT_PROVEN",
+        "reason": reason,
+    }
 
 
 def main() -> int:
@@ -108,7 +113,14 @@ def main() -> int:
     level1 = evidence.get("evaluation", {}).get("status") == "PASS" and bool(
         evidence.get("subject", {}).get("gitCommit")
     )
-    levels.append(level_record(1, names[1], level1, "Configured verification chain passed and source commit is recorded."))
+    levels.append(
+        level_record(
+            1,
+            names[1],
+            level1,
+            "Configured verification chain passed and source commit is recorded.",
+        )
+    )
 
     checksum_ok, checksum_errors = verify_checksums()
     level2 = (
@@ -119,12 +131,16 @@ def main() -> int:
         and bool(evidence.get("benchmark", {}).get("files"))
         and bool(evidence.get("policy", {}).get("files"))
     )
-    level2_reason = "Clean source, verified checksums, and dependency/benchmark/policy digests are present."
+    level2_reason = (
+        "Clean source, verified checksums, and dependency/benchmark/policy digests are present."
+    )
     if checksum_errors:
         level2_reason += " Checksum errors: " + ", ".join(checksum_errors)
     levels.append(level_record(2, names[2], level2, level2_reason))
 
-    external_ok, external_results = external_evidence(config.get("externalEvidence", []), args.offline)
+    external_ok, external_results = external_evidence(
+        config.get("externalEvidence", []), args.offline
+    )
     level3 = level2 and external_ok and config.get("maxLevel", 2) >= 3
     levels.append(
         level_record(
@@ -144,7 +160,9 @@ def main() -> int:
     if decision_cfg and decision_ok:
         decision_path = ROOT / decision_cfg["path"]
         decision_payload = json.loads(decision_path.read_text(encoding="utf-8"))
-        decision_ok = field_value(decision_payload, decision_cfg["field"]) in decision_cfg["allowedValues"]
+        decision_ok = (
+            field_value(decision_payload, decision_cfg["field"]) in decision_cfg["allowedValues"]
+        )
     level4 = level3 and config.get("maxLevel", 3) >= 4 and decision_ok
     reason4 = "Release-candidate proof is incomplete or intentionally outside this repository's current ceiling."
     if missing_paths:
@@ -178,7 +196,11 @@ def main() -> int:
         "repository": os.getenv("GITHUB_REPOSITORY"),
         "runId": os.getenv("GITHUB_RUN_ID"),
     }
-    if os.getenv("GITHUB_SERVER_URL") and os.getenv("GITHUB_REPOSITORY") and os.getenv("GITHUB_RUN_ID"):
+    if (
+        os.getenv("GITHUB_SERVER_URL")
+        and os.getenv("GITHUB_REPOSITORY")
+        and os.getenv("GITHUB_RUN_ID")
+    ):
         executor["runUrl"] = (
             f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}"
             f"/actions/runs/{os.environ['GITHUB_RUN_ID']}"
@@ -221,7 +243,9 @@ def main() -> int:
     print(f"Production AI proof: L{achieved} — {proof['achievedLabel']}")
     print(f"Proof: {proof_path.relative_to(ROOT)}")
 
-    required_level = min(config.get("minimumLevel", 2), 2) if args.offline else config.get("minimumLevel", 2)
+    required_level = (
+        min(config.get("minimumLevel", 2), 2) if args.offline else config.get("minimumLevel", 2)
+    )
     return 0 if achieved >= required_level else 2
 
 
