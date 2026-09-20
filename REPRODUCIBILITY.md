@@ -1,6 +1,6 @@
 # Reproducibility
 
-This repository implements the **Production AI Evidence Contract v1**.
+This repository implements **Production AI Evidence Contract v1** and the **Production AI Five-Level Proof Model v1**.
 
 ## Prerequisites
 
@@ -20,22 +20,29 @@ pip install -e ".[dev]"
 make reproduce
 ```
 
-The command runs the deterministic Academy verification chain (`pytest`, example validation, benchmark validation), records Git/runtime identity, hashes relevant source, benchmark, policy and dependency files, retains stdout/stderr, and writes:
+The command runs the deterministic Academy verification chain (`pytest`, example validation, benchmark validation), records Git/runtime identity, hashes relevant source, benchmark, policy and dependency files, retains stdout/stderr, and writes the Evidence Contract bundle under `evidence/out/current/`.
 
-```text
-evidence/out/current/
-├── evidence.json
-├── verification.stdout.log
-├── verification.stderr.log
-├── checksums.sha256
-└── summary.md
+A reproduction `PASS` is **L2 — Reproducible**. It is not a claim that every model/provider configuration is production-ready, safe, or approved for autonomous operation.
+
+## Assess the five-level proof
+
+```bash
+make proof
 ```
 
-The bundle uses `evidence/production-ai-evidence-contract-v1.schema.json`, vendored from the canonical schema maintained in `h00w/model-quality-release-gate`.
+The proof assessor verifies the public Hugging Face Playground and benchmark Dataset in addition to the Level-2 evidence and emits `proof.json` plus `proof-summary.md`.
 
-## Interpretation
+The Academy's configured ceiling is **L3 — Capability-Validated**. Levels 4-5 are intentionally not inferred from a public educational/research engineering environment.
 
-A reproduction `PASS` confirms the configured repository verification chain passed for the recorded commit/environment. It is not a claim that every model/provider configuration is production-ready, safe, or approved for autonomous operation.
+For a network-independent run:
+
+```bash
+make proof-offline
+```
+
+Offline assessment can establish at most L2.
+
+See [PROOF_MODEL.md](PROOF_MODEL.md) for the cumulative level definitions.
 
 ## Clean-room check
 
@@ -44,6 +51,6 @@ git clone https://github.com/h00w/agentic-ai.git
 cd agentic-ai
 git checkout <commit>
 python -m pip install -e ".[dev]"
-make reproduce
-cat evidence/out/current/summary.md
+make proof
+cat evidence/out/current/proof-summary.md
 ```
