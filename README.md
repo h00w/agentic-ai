@@ -45,6 +45,51 @@ This is not a collection of chatbot tutorials. The Academy treats agentic AI as 
 
 ---
 
+## Phase 1 — Provider Runtime & Structured Contracts
+
+The Academy now includes a provider-neutral LLM runtime foundation designed for reproducible AI engineering rather than one-off SDK examples.
+
+**Phase 1 engineering proof**
+
+- Provider-neutral `ProviderRequest` / `ProviderResponse` contracts validated with Pydantic.
+- Deterministic `MockProvider` for local development, CI and benchmark reproducibility.
+- Optional adapters for OpenAI, Anthropic, Gemini and Ollama.
+- Provider registry for runtime selection and extension.
+- Provider benchmark hook that records pass/fail, model, latency and token usage.
+- Secret-free CI tests for contracts, registry behavior and benchmark integration.
+- Existing deterministic agent, policy and safety paths remain unchanged.
+
+```text
+application / benchmark
+        ↓
+provider-neutral contracts
+        ↓
+provider registry
+   ┌────┼────────┬────────┬────────┐
+   ↓    ↓        ↓        ↓        ↓
+ mock  OpenAI  Anthropic Gemini   Ollama
+        ↓
+normalized response + usage + latency
+        ↓
+evaluation / release-gate pipeline
+```
+
+Install the core only:
+
+```bash
+pip install -e ".[dev]"
+```
+
+Install optional hosted-provider SDKs:
+
+```bash
+pip install -e ".[dev,providers]"
+```
+
+The mock provider is the default reference path for tests and does not require credentials. Hosted providers are opt-in.
+
+---
+
 ## Public Engineering Stack
 
 The public stack is intentionally separated by function rather than duplicated across platforms:
