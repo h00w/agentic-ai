@@ -21,5 +21,6 @@ jobs:
       - run: ruff format --check .
       - run: ruff check .
       - run: pytest
+      - run: pytest tests/test_providers.py evaluation/tests/test_provider_benchmark.py
       - run: python scripts/validate_examples.py
       - run: python scripts/check_links.py
