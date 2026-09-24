@@ -1,0 +1,19 @@
+{
+  "id": "16.01",
+  "title": "Skill Contracts and Evidence",
+  "module": "16",
+  "level": "intermediate",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "08-agent-evaluation",
+    "09-agent-security"
+  ],
+  "outcomes": [
+    "Distinguish a prompt from a skill capability contract",
+    "Define permissions and failure behavior explicitly",
+    "Produce reusable evidence-oriented Agent Skills"
+  ],
+  "artifacts": [
+    "curriculum/16-agent-skills-engineering/01-skill-contracts/artifacts/artifact.json"
+  ]
+}

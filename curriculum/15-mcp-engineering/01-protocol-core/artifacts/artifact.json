@@ -1,0 +1,17 @@
+{
+  "id": "artifact-mcp-tool-contract",
+  "type": "mcp",
+  "source_lesson": "15.01",
+  "summary": "Tool contract separating capability metadata, side effects, output trust and authorization scope.",
+  "paths": [
+    "curriculum/15-mcp-engineering/01-protocol-core/artifacts/tool-contract.example.json"
+  ],
+  "evidence": [
+    {
+      "kind": "contract",
+      "path": "curriculum/15-mcp-engineering/01-protocol-core/artifacts/tool-contract.example.json",
+      "claim": "The example declares schema, side effects, output trust, scope and timeout metadata."
+    }
+  ],
+  "maturity": "learning"
+}

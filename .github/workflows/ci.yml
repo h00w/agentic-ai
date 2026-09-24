@@ -24,3 +24,6 @@ jobs:
       - run: pytest tests/test_providers.py evaluation/tests/test_provider_benchmark.py
       - run: python scripts/validate_examples.py
       - run: python scripts/check_links.py
+      - run: python scripts/validate_benchmark_dataset.py
+      - run: python scripts/audit_curriculum.py
+      - run: python scripts/build_catalog.py --check

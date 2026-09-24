@@ -1,0 +1,18 @@
+{
+  "id": "15.01",
+  "title": "MCP Protocol Core and Tool Contract",
+  "module": "15",
+  "level": "intermediate",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "05-tools-apis-mcp"
+  ],
+  "outcomes": [
+    "Separate MCP capability discovery from authorization",
+    "Define a tool contract with schema and side-effect metadata",
+    "Identify MCP trust boundaries and conformance checks"
+  ],
+  "artifacts": [
+    "curriculum/15-mcp-engineering/01-protocol-core/artifacts/artifact.json"
+  ]
+}
