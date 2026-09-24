@@ -9,6 +9,7 @@ import json
 import os
 import pathlib
 import platform
+import shlex
 import shutil
 import subprocess
 import sys
@@ -77,12 +78,34 @@ def command_version(cmd):
         return None
 
 
+def run_verification_command(command: str) -> tuple[int, str, str]:
+    stdout_parts: list[str] = []
+    stderr_parts: list[str] = []
+    for segment in (part.strip() for part in command.split("&&")):
+        if not segment:
+            continue
+        process = subprocess.run(
+            shlex.split(segment),
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        stdout_parts.append(process.stdout or "")
+        stderr_parts.append(process.stderr or "")
+        if process.returncode != 0:
+            return process.returncode, "".join(stdout_parts), "".join(stderr_parts)
+    return 0, "".join(stdout_parts), "".join(stderr_parts)
+
+
 def main():
     cfg = json.loads(CFG_PATH.read_text(encoding="utf-8"))
     shutil.rmtree(OUT, ignore_errors=True)
     OUT.mkdir(parents=True, exist_ok=True)
 
-    git_commit = run_text(["git", "rev-parse", "HEAD"]) or ("0" * 40)
+    git_commit = run_text(["git", "rev-parse", "HEAD"])
+    if not git_commit:
+        raise SystemExit("Unable to resolve git HEAD for reproducibility evidence.")
     git_branch = run_text(["git", "rev-parse", "--abbrev-ref", "HEAD"])
     dirty = bool(run_text(["git", "status", "--porcelain"]))
 
@@ -94,22 +117,15 @@ def main():
 
     command = cfg["verification_command"]
     started = time.monotonic()
-    proc = subprocess.run(
-        command,
-        cwd=ROOT,
-        shell=True,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    returncode, stdout_text, stderr_text = run_verification_command(command)
     duration = round(time.monotonic() - started, 3)
 
     stdout = OUT / "verification.stdout.log"
     stderr = OUT / "verification.stderr.log"
-    stdout.write_text(proc.stdout or "", encoding="utf-8")
-    stderr.write_text(proc.stderr or "", encoding="utf-8")
+    stdout.write_text(stdout_text, encoding="utf-8")
+    stderr.write_text(stderr_text, encoding="utf-8")
 
-    status = "PASS" if proc.returncode == 0 else "FAIL"
+    status = "PASS" if returncode == 0 else "FAIL"
     now = dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
     evidence = {
@@ -146,7 +162,7 @@ def main():
         },
         "evaluation": {
             "verificationCommand": command,
-            "exitCode": proc.returncode,
+            "exitCode": returncode,
             "status": status,
             "durationSeconds": duration,
             "stdoutArtifact": stdout.name,
@@ -194,7 +210,7 @@ def main():
         f"- Git commit: `{git_commit}`\n"
         f"- Dirty working tree: `{dirty}`\n"
         f"- Verification: **{status}**\n"
-        f"- Exit code: `{proc.returncode}`\n"
+        f"- Exit code: `{returncode}`\n"
         f"- Duration: `{duration}s`\n\n"
         "> A reproduction PASS confirms the configured verification chain "
         "completed successfully for this source/environment. It is not a "
@@ -204,7 +220,7 @@ def main():
 
     print(f"Production AI Evidence Contract v1: {status}")
     print(f"Evidence: {bundle.relative_to(ROOT)}")
-    return proc.returncode
+    return returncode
 
 
 if __name__ == "__main__":

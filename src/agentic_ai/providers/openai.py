@@ -25,7 +25,22 @@ class OpenAIProvider(LLMProvider):
         started = perf_counter()
         response = self.client.responses.create(
             model=request.model,
-            input=[m.model_dump() for m in request.messages],
+            input=[
+                {
+                    "role": message.role if message.role != "tool" else "assistant",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": (
+                                message.content
+                                if message.role != "tool"
+                                else f"tool: {message.content}"
+                            ),
+                        }
+                    ],
+                }
+                for message in request.messages
+            ],
             temperature=request.temperature,
             max_output_tokens=request.max_tokens,
         )

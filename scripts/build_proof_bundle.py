@@ -140,7 +140,7 @@ def write_sbom(proof: dict) -> pathlib.Path:
     return path
 
 
-def write_provenance(proof: dict, evidence: dict, sbom_path: pathlib.Path) -> pathlib.Path:
+def write_provenance(proof: dict, sbom_path: pathlib.Path) -> pathlib.Path:
     repo = os.getenv("GITHUB_REPOSITORY") or proof.get("subject", {}).get("repository")
     server = os.getenv("GITHUB_SERVER_URL", "https://github.com")
     run_id = os.getenv("GITHUB_RUN_ID")
@@ -215,10 +215,9 @@ def main() -> int:
     if not evidence_path.is_file() or not proof_path.is_file():
         raise SystemExit("Run make proof before packaging.")
 
-    evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
     proof = json.loads(proof_path.read_text(encoding="utf-8"))
     sbom_path = write_sbom(proof)
-    provenance_path = write_provenance(proof, evidence, sbom_path)
+    provenance_path = write_provenance(proof, sbom_path)
 
     schema_path = ROOT / "evidence" / "production-ai-proof-manifest-v1.schema.json"
     proof_model_path = ROOT / "evidence" / "production-ai-proof-model-v1.json"

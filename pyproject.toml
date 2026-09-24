@@ -21,7 +21,7 @@ providers = ["openai>=1.0,<2", "anthropic>=0.40,<1", "google-genai>=1,<2"]
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = [".", "src"]
 testpaths = ["tests", "evaluation/tests"]
 addopts = "-q"
 

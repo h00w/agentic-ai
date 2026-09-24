@@ -61,7 +61,7 @@ def paths_exist(patterns: list[str]) -> tuple[bool, list[str]]:
     return not missing, missing
 
 
-def external_evidence(items: list[dict], offline: bool) -> tuple[bool, list[dict]]:
+def external_evidence(items: list[dict], offline: bool) -> tuple[bool | None, list[dict]]:
     results = []
     for item in items:
         result = {
@@ -87,16 +87,18 @@ def external_evidence(items: list[dict], offline: bool) -> tuple[bool, list[dict
                 result["error"] = type(exc).__name__
         results.append(result)
     if offline:
-        return False, results
+        return None, results
     required = [item for item in results if item["required"]]
     return bool(required) and all(item["status"] == "VERIFIED" for item in required), results
 
 
-def level_record(level: int, name: str, passed: bool, reason: str) -> dict:
+def level_record(
+    level: int, name: str, passed: bool, reason: str, status: str | None = None
+) -> dict:
     return {
         "level": level,
         "name": name,
-        "status": "PASS" if passed else "NOT_PROVEN",
+        "status": status or ("PASS" if passed else "NOT_PROVEN"),
         "reason": reason,
     }
 
@@ -143,15 +145,23 @@ def main() -> int:
     external_ok, external_results = external_evidence(
         config.get("externalEvidence", []), args.offline
     )
-    level3 = level2 and external_ok and config.get("maxLevel", 2) >= 3
+    level3 = level2 and external_ok is True and config.get("maxLevel", 2) >= 3
+    level3_reason = (
+        "Versioned benchmark evidence is bound to independently inspectable public capability evidence."
+        if level3
+        else (
+            "Offline mode skips external evidence verification and caps assessment at L2."
+            if external_ok is None
+            else "Public capability evidence was not fully verified in this run."
+        )
+    )
     levels.append(
         level_record(
             3,
             names[3],
             level3,
-            "Versioned benchmark evidence is bound to independently inspectable public capability evidence."
-            if level3
-            else "Public capability evidence was not fully verified in this run.",
+            level3_reason,
+            status="SKIPPED_OFFLINE" if external_ok is None else None,
         )
     )
 
