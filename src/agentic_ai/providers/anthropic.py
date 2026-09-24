@@ -24,7 +24,23 @@ class AnthropicProvider(LLMProvider):
     def generate(self, request: ProviderRequest) -> ProviderResponse:
         started = perf_counter()
         system = "\n".join(m.content for m in request.messages if m.role == "system")
-        messages = [m.model_dump() for m in request.messages if m.role != "system"]
+        messages = [
+            {
+                "role": message.role if message.role in {"user", "assistant"} else "assistant",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": (
+                            message.content
+                            if message.role != "tool"
+                            else f"tool: {message.content}"
+                        ),
+                    }
+                ],
+            }
+            for message in request.messages
+            if message.role != "system"
+        ]
         response = self.client.messages.create(
             model=request.model,
             max_tokens=request.max_tokens,

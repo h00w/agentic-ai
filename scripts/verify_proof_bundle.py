@@ -42,6 +42,19 @@ def safe_manifest_path(root: pathlib.Path, relative_path: str) -> pathlib.Path:
     return resolved
 
 
+def validate_manifest_entry(item: object, index: int) -> tuple[str, str, int] | None:
+    if not isinstance(item, dict):
+        raise ValueError(f"malformed_entry:{index}")
+    path = item.get("path")
+    sha256_value = item.get("sha256")
+    byte_count = item.get("bytes")
+    if not isinstance(path, str) or not isinstance(sha256_value, str) or not isinstance(
+        byte_count, int
+    ):
+        raise ValueError(f"malformed_entry:{index}")
+    return path, sha256_value, byte_count
+
+
 def verify_bundle(bundle: pathlib.Path) -> dict:
     errors: list[str] = []
     with tempfile.TemporaryDirectory() as tmp:
@@ -54,18 +67,25 @@ def verify_bundle(bundle: pathlib.Path) -> dict:
             errors.append("missing:proof-manifest.json")
         else:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            for item in manifest.get("files", []):
+            for index, item in enumerate(manifest.get("files", [])):
                 try:
-                    path = safe_manifest_path(target, item["path"])
+                    relative_path, sha256_value, byte_count = validate_manifest_entry(
+                        item, index
+                    )
+                except ValueError as exc:
+                    errors.append(str(exc))
+                    continue
+                try:
+                    path = safe_manifest_path(target, relative_path)
                 except ValueError as exc:
                     errors.append(str(exc))
                     continue
                 if not path.is_file():
-                    errors.append(f"missing:{item['path']}")
-                elif sha256(path) != item["sha256"]:
-                    errors.append(f"sha256_mismatch:{item['path']}")
-                elif path.stat().st_size != item["bytes"]:
-                    errors.append(f"size_mismatch:{item['path']}")
+                    errors.append(f"missing:{relative_path}")
+                elif sha256(path) != sha256_value:
+                    errors.append(f"sha256_mismatch:{relative_path}")
+                elif path.stat().st_size != byte_count:
+                    errors.append(f"size_mismatch:{relative_path}")
 
     return {
         "verified": not errors,

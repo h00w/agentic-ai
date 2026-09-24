@@ -22,7 +22,10 @@ class OllamaProvider(LLMProvider):
                 "model": request.model,
                 "messages": [m.model_dump() for m in request.messages],
                 "stream": False,
-                "options": {"temperature": request.temperature},
+                "options": {
+                    "temperature": request.temperature,
+                    "num_predict": request.max_tokens,
+                },
             }
         ).encode()
         req = Request(

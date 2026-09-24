@@ -27,8 +27,17 @@ class OpenAIProvider(LLMProvider):
             model=request.model,
             input=[
                 {
-                    "role": message.role,
-                    "content": [{"type": "input_text", "text": message.content}],
+                    "role": message.role if message.role != "tool" else "assistant",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": (
+                                message.content
+                                if message.role != "tool"
+                                else f"tool: {message.content}"
+                            ),
+                        }
+                    ],
                 }
                 for message in request.messages
             ],
