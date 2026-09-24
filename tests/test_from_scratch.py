@@ -40,9 +40,7 @@ def test_unknown_tool_fails_closed() -> None:
     with pytest.raises(UnknownToolError):
         run_bounded_agent(
             "Use a tool",
-            lambda _goal, _observations: Decision(
-                tool_call=ToolCall("not_registered", {})
-            ),
+            lambda _goal, _observations: Decision(tool_call=ToolCall("not_registered", {})),
             {},
         )
 
@@ -51,9 +49,7 @@ def test_step_budget_stops_runaway_loop() -> None:
     with pytest.raises(StepBudgetExceeded):
         run_bounded_agent(
             "Keep searching",
-            lambda _goal, _observations: Decision(
-                tool_call=ToolCall("search", {"query": "same"})
-            ),
+            lambda _goal, _observations: Decision(tool_call=ToolCall("search", {"query": "same"})),
             {"search": lambda _args: "no terminal answer"},
             max_steps=2,
         )
