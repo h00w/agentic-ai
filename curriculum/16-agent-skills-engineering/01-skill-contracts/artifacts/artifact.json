@@ -1,0 +1,19 @@
+{
+  "id": "artifact-agent-skills-starter-pack",
+  "type": "skill",
+  "source_lesson": "16.01",
+  "summary": "Starter skills for evaluation, threat modeling and production-readiness review.",
+  "paths": [
+    "skills/evaluate-agent/SKILL.md",
+    "skills/threat-model-agent/SKILL.md",
+    "skills/production-readiness-review/SKILL.md"
+  ],
+  "evidence": [
+    {
+      "kind": "contract",
+      "path": "skills/README.md",
+      "claim": "The skills architecture defines bounded purpose, required sections and evidence output."
+    }
+  ],
+  "maturity": "learning"
+}

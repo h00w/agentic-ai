@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "source": "filesystem-derived",
+  "modules": [
+    {
+      "id": "01",
+      "slug": "exploring-agentic-ai",
+      "path": "curriculum/01-exploring-agentic-ai",
+      "lesson_count": 0
+    },
+    {
+      "id": "02",
+      "slug": "python-for-agentic-ai",
+      "path": "curriculum/02-python-for-agentic-ai",
+      "lesson_count": 0
+    },
+    {
+      "id": "03",
+      "slug": "llm-agent-foundations",
+      "path": "curriculum/03-llm-agent-foundations",
+      "lesson_count": 0
+    },
+    {
+      "id": "04",
+      "slug": "single-agent-engineering",
+      "path": "curriculum/04-single-agent-engineering",
+      "lesson_count": 1
+    },
+    {
+      "id": "05",
+      "slug": "tools-apis-mcp",
+      "path": "curriculum/05-tools-apis-mcp",
+      "lesson_count": 0
+    },
+    {
+      "id": "06",
+      "slug": "rag-memory-knowledge",
+      "path": "curriculum/06-rag-memory-knowledge",
+      "lesson_count": 0
+    },
+    {
+      "id": "07",
+      "slug": "multi-agent-systems",
+      "path": "curriculum/07-multi-agent-systems",
+      "lesson_count": 0
+    },
+    {
+      "id": "08",
+      "slug": "agent-evaluation",
+      "path": "curriculum/08-agent-evaluation",
+      "lesson_count": 0
+    },
+    {
+      "id": "09",
+      "slug": "agent-security",
+      "path": "curriculum/09-agent-security",
+      "lesson_count": 0
+    },
+    {
+      "id": "10",
+      "slug": "production-engineering",
+      "path": "curriculum/10-production-engineering",
+      "lesson_count": 0
+    },
+    {
+      "id": "11",
+      "slug": "observability",
+      "path": "curriculum/11-observability",
+      "lesson_count": 0
+    },
+    {
+      "id": "12",
+      "slug": "governance-scaling",
+      "path": "curriculum/12-governance-scaling",
+      "lesson_count": 0
+    },
+    {
+      "id": "13",
+      "slug": "enterprise-architecture",
+      "path": "curriculum/13-enterprise-architecture",
+      "lesson_count": 0
+    },
+    {
+      "id": "14",
+      "slug": "agentic-ai-leadership",
+      "path": "curriculum/14-agentic-ai-leadership",
+      "lesson_count": 0
+    },
+    {
+      "id": "15",
+      "slug": "mcp-engineering",
+      "path": "curriculum/15-mcp-engineering",
+      "lesson_count": 1
+    },
+    {
+      "id": "16",
+      "slug": "agent-skills-engineering",
+      "path": "curriculum/16-agent-skills-engineering",
+      "lesson_count": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "04.01",
+      "title": "Agent Loop From Scratch",
+      "module": "04",
+      "level": "intermediate",
+      "duration_minutes": 90,
+      "prerequisites": [
+        "03-llm-agent-foundations"
+      ],
+      "outcomes": [
+        "Explain a framework-neutral agent loop",
+        "Implement deterministic tool and step boundaries",
+        "Demonstrate fail-closed unknown-tool and budget behavior"
+      ],
+      "artifacts": [
+        "curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/artifacts/artifact.json"
+      ],
+      "path": "curriculum/04-single-agent-engineering/01-agent-loop-from-scratch"
+    },
+    {
+      "id": "15.01",
+      "title": "MCP Protocol Core and Tool Contract",
+      "module": "15",
+      "level": "intermediate",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "05-tools-apis-mcp"
+      ],
+      "outcomes": [
+        "Separate MCP capability discovery from authorization",
+        "Define a tool contract with schema and side-effect metadata",
+        "Identify MCP trust boundaries and conformance checks"
+      ],
+      "artifacts": [
+        "curriculum/15-mcp-engineering/01-protocol-core/artifacts/artifact.json"
+      ],
+      "path": "curriculum/15-mcp-engineering/01-protocol-core"
+    },
+    {
+      "id": "16.01",
+      "title": "Skill Contracts and Evidence",
+      "module": "16",
+      "level": "intermediate",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "08-agent-evaluation",
+        "09-agent-security"
+      ],
+      "outcomes": [
+        "Distinguish a prompt from a skill capability contract",
+        "Define permissions and failure behavior explicitly",
+        "Produce reusable evidence-oriented Agent Skills"
+      ],
+      "artifacts": [
+        "curriculum/16-agent-skills-engineering/01-skill-contracts/artifacts/artifact.json"
+      ],
+      "path": "curriculum/16-agent-skills-engineering/01-skill-contracts"
+    }
+  ],
+  "skills": [
+    {
+      "name": "evaluate-agent",
+      "path": "skills/evaluate-agent/SKILL.md"
+    },
+    {
+      "name": "production-readiness-review",
+      "path": "skills/production-readiness-review/SKILL.md"
+    },
+    {
+      "name": "threat-model-agent",
+      "path": "skills/threat-model-agent/SKILL.md"
+    }
+  ],
+  "totals": {
+    "modules": 16,
+    "lessons_with_metadata": 3,
+    "skills": 3
+  }
+}

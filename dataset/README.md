@@ -41,7 +41,7 @@ configs:
 
 # Hendar Agentic AI Evaluation & Security Benchmark
 
-A compact, expert-authored benchmark for evaluating **trustworthy agentic AI systems** across capability, tool use, retrieval, security, policy enforcement, multi-agent coordination and regression safety.
+A compact, expert-authored benchmark for evaluating **trustworthy agentic AI systems** across capability, tool use, retrieval, security, policy enforcement, multi-agent coordination and regression safety. The current release contains **104 synthetic cases: 13 cases in each of 8 domains**.
 
 This dataset is a public companion to the [Agentic AI Academy](https://github.com/h00w/agentic-ai) by **Hendar Mawan, PhD**. It is designed for evaluation, CI regression testing, red-team exercises and engineering education—not as a generic instruction-tuning corpus.
 

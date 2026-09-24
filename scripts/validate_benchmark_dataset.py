@@ -17,6 +17,18 @@ REQUIRED = {
     "rationale",
 }
 VALID_RISK = {"low", "medium", "high", "critical"}
+EXPECTED_DOMAINS = {
+    "task_success",
+    "tool_routing",
+    "rag_groundedness",
+    "prompt_injection",
+    "unsafe_tool_requests",
+    "policy_decisions",
+    "multi_agent_tasks",
+    "regression_cases",
+}
+TARGET_CASES = 100
+MIN_CASES_PER_DOMAIN = 12
 
 
 def main() -> None:
@@ -27,7 +39,6 @@ def main() -> None:
     seen: set[str] = set()
     domains: Counter[str] = Counter()
     total = 0
-
     for path in files:
         for line_no, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
             if not line.strip():
@@ -38,6 +49,8 @@ def main() -> None:
                 raise SystemExit(f"{path}:{line_no} missing fields: {sorted(missing)}")
             if record["id"] in seen:
                 raise SystemExit(f"Duplicate id: {record['id']}")
+            if record["domain"] not in EXPECTED_DOMAINS:
+                raise SystemExit(f"{path}:{line_no} invalid domain")
             if record["risk_level"] not in VALID_RISK:
                 raise SystemExit(f"{path}:{line_no} invalid risk_level")
             if not isinstance(record["tags"], list) or not record["tags"]:
@@ -46,20 +59,12 @@ def main() -> None:
             domains[record["domain"]] += 1
             total += 1
 
-    expected_domains = {
-        "task_success",
-        "tool_routing",
-        "rag_groundedness",
-        "prompt_injection",
-        "unsafe_tool_requests",
-        "policy_decisions",
-        "multi_agent_tasks",
-        "regression_cases",
-    }
-    if set(domains) != expected_domains:
+    if set(domains) != EXPECTED_DOMAINS:
         raise SystemExit(f"Domain mismatch: {sorted(domains)}")
-    if any(count < 6 for count in domains.values()):
-        raise SystemExit(f"Each domain needs at least 6 cases: {dict(domains)}")
+    if any(count < MIN_CASES_PER_DOMAIN for count in domains.values()):
+        raise SystemExit(f"Each domain needs at least {MIN_CASES_PER_DOMAIN}: {dict(domains)}")
+    if total < TARGET_CASES:
+        raise SystemExit(f"Benchmark needs at least {TARGET_CASES} cases; found {total}")
 
     print(f"Validated {total} benchmark cases across {len(domains)} domains")
     for domain, count in sorted(domains.items()):
