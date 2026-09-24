@@ -69,9 +69,7 @@ def main() -> None:
                 errors.append(f"{path.relative_to(ROOT)} missing path: {ref}")
         for evidence in artifact["evidence"]:
             if not (ROOT / evidence["path"]).exists():
-                errors.append(
-                    f"{path.relative_to(ROOT)} missing evidence: {evidence['path']}"
-                )
+                errors.append(f"{path.relative_to(ROOT)} missing evidence: {evidence['path']}")
 
     skill_count = 0
     for skill_file in sorted(SKILLS.glob("*/SKILL.md")):
