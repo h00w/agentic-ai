@@ -23,11 +23,30 @@ class GeminiProvider(LLMProvider):
 
     def generate(self, request: ProviderRequest) -> ProviderResponse:
         started = perf_counter()
-        contents = "\n".join(f"{m.role}: {m.content}" for m in request.messages)
-        response = self.client.models.generate_content(
-            model=request.model,
-            contents=contents,
-        )
+        system_messages = [message.content for message in request.messages if message.role == "system"]
+        contents = [
+            {
+                "role": "model" if message.role == "assistant" else "user",
+                "parts": [
+                    {
+                        "text": (
+                            message.content
+                            if message.role in {"user", "assistant"}
+                            else f"{message.role}: {message.content}"
+                        )
+                    }
+                ],
+            }
+            for message in request.messages
+            if message.role != "system"
+        ]
+        if not contents:
+            contents = [{"role": "user", "parts": [{"text": ""}]}]
+
+        kwargs = {"model": request.model, "contents": contents}
+        if system_messages:
+            kwargs["config"] = {"system_instruction": "\n".join(system_messages)}
+        response = self.client.models.generate_content(**kwargs)
         text = getattr(response, "text", "") or ""
         return ProviderResponse(
             provider=self.name,

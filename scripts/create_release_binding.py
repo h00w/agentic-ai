@@ -65,7 +65,10 @@ def main() -> int:
         "sbomSha256": sha256(OUT / "sbom.spdx.json"),
         "provenanceSha256": sha256(OUT / "provenance.json"),
         "verification": {
-            "internal": "python scripts/verify_proof_bundle.py production-ai-proof-bundle.tar.gz",
+            "internal": (
+                "python scripts/verify_proof_bundle.py "
+                "evidence/out/current/production-ai-proof-bundle.tar.gz"
+            ),
             "attestation": (
                 "gh attestation verify production-ai-proof-bundle.tar.gz "
                 f"-R {os.getenv('GITHUB_REPOSITORY') or manifest['subject']['repository']}"

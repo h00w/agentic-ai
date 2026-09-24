@@ -31,6 +31,17 @@ def safe_extract(tar: tarfile.TarFile, target: pathlib.Path) -> None:
     tar.extractall(target)
 
 
+def safe_manifest_path(root: pathlib.Path, relative_path: str) -> pathlib.Path:
+    candidate = pathlib.Path(relative_path)
+    if candidate.is_absolute():
+        raise ValueError(f"absolute_path_not_allowed:{relative_path}")
+    resolved = (root / candidate).resolve()
+    root_resolved = root.resolve()
+    if resolved != root_resolved and root_resolved not in resolved.parents:
+        raise ValueError(f"path_traversal:{relative_path}")
+    return resolved
+
+
 def verify_bundle(bundle: pathlib.Path) -> dict:
     errors: list[str] = []
     with tempfile.TemporaryDirectory() as tmp:
@@ -44,7 +55,11 @@ def verify_bundle(bundle: pathlib.Path) -> dict:
         else:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
             for item in manifest.get("files", []):
-                path = target / item["path"]
+                try:
+                    path = safe_manifest_path(target, item["path"])
+                except ValueError as exc:
+                    errors.append(str(exc))
+                    continue
                 if not path.is_file():
                     errors.append(f"missing:{item['path']}")
                 elif sha256(path) != item["sha256"]:

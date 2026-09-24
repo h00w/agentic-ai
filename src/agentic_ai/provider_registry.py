@@ -2,16 +2,25 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
+from agentic_ai.providers.anthropic import AnthropicProvider
 from agentic_ai.providers.base import LLMProvider
+from agentic_ai.providers.gemini import GeminiProvider
 from agentic_ai.providers.mock import MockProvider
-
+from agentic_ai.providers.ollama import OllamaProvider
+from agentic_ai.providers.openai import OpenAIProvider
 
 ProviderFactory = Callable[[], LLMProvider]
 
 
 class ProviderRegistry:
     def __init__(self) -> None:
-        self._factories: dict[str, ProviderFactory] = {"mock": MockProvider}
+        self._factories: dict[str, ProviderFactory] = {
+            "anthropic": AnthropicProvider,
+            "gemini": GeminiProvider,
+            "mock": MockProvider,
+            "ollama": OllamaProvider,
+            "openai": OpenAIProvider,
+        }
 
     def register(self, name: str, factory: ProviderFactory) -> None:
         self._factories[name] = factory

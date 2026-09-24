@@ -25,7 +25,13 @@ class OpenAIProvider(LLMProvider):
         started = perf_counter()
         response = self.client.responses.create(
             model=request.model,
-            input=[m.model_dump() for m in request.messages],
+            input=[
+                {
+                    "role": message.role,
+                    "content": [{"type": "input_text", "text": message.content}],
+                }
+                for message in request.messages
+            ],
             temperature=request.temperature,
             max_output_tokens=request.max_tokens,
         )

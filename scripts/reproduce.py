@@ -82,7 +82,9 @@ def main():
     shutil.rmtree(OUT, ignore_errors=True)
     OUT.mkdir(parents=True, exist_ok=True)
 
-    git_commit = run_text(["git", "rev-parse", "HEAD"]) or ("0" * 40)
+    git_commit = run_text(["git", "rev-parse", "HEAD"])
+    if not git_commit:
+        raise SystemExit("Unable to resolve git HEAD for reproducibility evidence.")
     git_branch = run_text(["git", "rev-parse", "--abbrev-ref", "HEAD"])
     dirty = bool(run_text(["git", "status", "--porcelain"]))
 
