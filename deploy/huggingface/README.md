@@ -87,3 +87,14 @@ The next iterations can add optional Hugging Face inference, richer document-bac
 ## License
 
 MIT License. See the canonical repository for the complete license, curriculum and engineering assets.
+
+
+## Five-level production-AI proof
+
+The Academy now uses the shared proof model:
+
+`L1 Runnable → L2 Reproducible → L3 Capability-Validated → L4 Production-Candidate → L5 Production-Validated`.
+
+The public Playground and benchmark Dataset support the independently inspectable capability layer. The canonical GitHub source computes the current level with `make proof`; this project deliberately caps its claim at **L3 — Capability-Validated** and does not infer production deployment from a demo.
+
+Specification: https://github.com/h00w/agentic-ai/blob/main/PROOF_MODEL.md

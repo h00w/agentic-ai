@@ -1,0 +1,26 @@
+{
+  "proofModelVersion": "1.0.0",
+  "minimumLevel": 3,
+  "maxLevel": 3,
+  "externalEvidence": [
+    {
+      "kind": "huggingface_space",
+      "url": "https://huggingface.co/api/spaces/h0000w/hendar-agentic-ai",
+      "displayUrl": "https://huggingface.co/spaces/h0000w/hendar-agentic-ai",
+      "required": true
+    },
+    {
+      "kind": "huggingface_dataset",
+      "url": "https://huggingface.co/api/datasets/h0000w/hendar-agentic-ai-dataset",
+      "displayUrl": "https://huggingface.co/datasets/h0000w/hendar-agentic-ai-dataset",
+      "required": true
+    }
+  ],
+  "level4": {},
+  "level5": {
+    "enabled": false,
+    "deploymentEvidencePath": "evidence/deployment-evidence.json",
+    "minimumObservationSeconds": 86400,
+    "reason": "The public Academy demonstrates capability and release-gate engineering but does not assert a production deployment authorization or target-production observation window."
+  }
+}

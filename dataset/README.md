@@ -41,7 +41,7 @@ configs:
 
 # Hendar Agentic AI Evaluation & Security Benchmark
 
-A compact, expert-authored benchmark for evaluating **trustworthy agentic AI systems** across capability, tool use, retrieval, security, policy enforcement, multi-agent coordination and regression safety.
+A compact, expert-authored benchmark for evaluating **trustworthy agentic AI systems** across capability, tool use, retrieval, security, policy enforcement, multi-agent coordination and regression safety. The current release contains **104 synthetic cases: 13 cases in each of 8 domains**.
 
 This dataset is a public companion to the [Agentic AI Academy](https://github.com/h00w/agentic-ai) by **Hendar Mawan, PhD**. It is designed for evaluation, CI regression testing, red-team exercises and engineering education—not as a generic instruction-tuning corpus.
 
@@ -102,3 +102,14 @@ If you use this benchmark in teaching, evaluation or research, cite the Agentic 
 ## License
 
 Benchmark data: **CC BY 4.0**. Canonical Academy source code remains under its repository license.
+
+
+## Five-level production-AI proof
+
+The Academy now uses the shared proof model:
+
+`L1 Runnable → L2 Reproducible → L3 Capability-Validated → L4 Production-Candidate → L5 Production-Validated`.
+
+The public Playground and benchmark Dataset support the independently inspectable capability layer. The canonical GitHub source computes the current level with `make proof`; this project deliberately caps its claim at **L3 — Capability-Validated** and does not infer production deployment from a demo.
+
+Specification: https://github.com/h00w/agentic-ai/blob/main/PROOF_MODEL.md

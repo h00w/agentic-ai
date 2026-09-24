@@ -1,84 +1,71 @@
 # Reproducibility
 
-This repository implements **Production AI Evidence Contract v1** so another engineer can rerun the declared verification chain and receive a machine-readable evidence bundle bound to the exact Git commit, benchmark inputs, environment and logs.
+This repository implements **Production AI Evidence Contract v1** and the **Production AI Five-Level Proof Model v1**.
 
-## One-command reproduction
+## Prerequisites
+
+- Git
+- Python 3.12+
+
+Install the project in an isolated environment:
+
+```bash
+python -m pip install --upgrade pip
+pip install -e ".[dev]"
+```
+
+## Reproduce
+
+```bash
+make reproduce
+```
+
+The command runs the deterministic Academy verification chain (`pytest`, example validation, benchmark validation), records Git/runtime identity, hashes relevant source, benchmark, policy and dependency files, retains stdout/stderr, and writes the Evidence Contract bundle under `evidence/out/current/`.
+
+A reproduction `PASS` is **L2 — Reproducible**. It is not a claim that every model/provider configuration is production-ready, safe, or approved for autonomous operation.
+
+## Assess the five-level proof
+
+```bash
+make proof
+```
+
+The proof assessor verifies the public Hugging Face Playground and benchmark Dataset in addition to the Level-2 evidence and emits `proof.json` plus `proof-summary.md`.
+
+The Academy's configured ceiling is **L3 — Capability-Validated**. Levels 4-5 are intentionally not inferred from a public educational/research engineering environment.
+
+For a network-independent run:
+
+```bash
+make proof-offline
+```
+
+Offline assessment can establish at most L2.
+
+See [PROOF_MODEL.md](PROOF_MODEL.md) for the cumulative level definitions.
+
+## Clean-room check
 
 ```bash
 git clone https://github.com/h00w/agentic-ai.git
 cd agentic-ai
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -e ".[dev]"
-make reproduce
+git checkout <commit>
+python -m pip install -e ".[dev]"
+make proof
+cat evidence/out/current/proof-summary.md
 ```
 
-The default reproduction path is intentionally offline with respect to model providers and does not require an API key.
 
-## What `make reproduce` verifies
+## Portable proof artifact and signed provenance
 
-The plan in `evidence/reproduction-plan.json` executes:
+Step 3 packages the proof state with `make proof-package` and verifies internal integrity with `make proof-verify`.
 
-1. `pytest -q`;
-2. runnable-example validation;
-3. documentation link checks;
-4. benchmark schema/content validation;
-5. generation of a Production AI Evidence Contract v1 bundle.
+The archive contains the Evidence Contract, proof assessment, proof manifest, direct-dependency SPDX SBOM, provenance linkage, schemas, proof model and checksums. Trusted GitHub Actions runs additionally attach SLSA provenance, SBOM and custom proof-manifest attestations to the completed bundle.
 
-The declared evidence inputs include the benchmark source, evaluation engine, framework-neutral reference implementation, security policy and dependency manifest.
-
-## Evidence output
-
-```text
-artifacts/reproduction/<UTC timestamp>-<git sha>/
-├── evidence.json
-├── summary.md
-├── checksums.sha256
-└── logs/
-```
-
-`evidence.json` records repository identity, commit, tracked dirty state, environment, SHA-256 identities for declared inputs, every verification step and the resulting reproduction status.
-
-Statuses are:
-
-- `REPRODUCED` — all declared checks passed from a clean tracked working tree;
-- `PARTIAL` — checks passed but tracked local modifications were present;
-- `FAILED` — a declared input or verification step failed.
-
-These are **reproduction statuses**, not deployment-authority decisions.
-
-## Why this matters for the Academy
-
-The Academy's 48-case benchmark and engineering examples are useful only if their evidence can be reconstructed. The contract therefore binds the result to the exact source revision and benchmark definition instead of relying on screenshots or a mutable live demo.
-
-Reproduction does not prove that the synthetic benchmark covers all real production failures. It proves that the declared tests, benchmark structure and controls can be rerun for the identified revision.
-
-## Verify the bundle
-
-On a system with GNU `sha256sum`:
+Verify the external signature with:
 
 ```bash
-cd artifacts/reproduction/$(cat artifacts/reproduction/LATEST)
-sha256sum --check checksums.sha256
+gh attestation verify --owner h00w evidence/out/current/production-ai-proof-bundle.tar.gz
 ```
 
-For publication-quality evidence, reproduce from an immutable tag or full commit SHA with a clean working tree and retain the complete evidence directory.
-
-## Custom evidence location
-
-```bash
-REPRO_OUT=/tmp/agentic-ai-evidence make reproduce
-```
-
-## Contract source
-
-The canonical schema is maintained in `h00w/model-quality-release-gate` and vendored locally at:
-
-`evidence/production-ai-evidence-contract-v1.schema.json`
-
-The local schema is hashed into every generated evidence bundle so a result can identify the contract definition used to generate it.
-
-## Updating the plan
-
-When the benchmark, evaluation engine, critical security controls or dependency contract changes, update `evidence/reproduction-plan.json` in the same pull request. Do not remove failing checks merely to obtain a green reproduction status; failures are part of the evidence.
+See [PROVENANCE.md](PROVENANCE.md). A valid signature proves provenance and integrity; it does not raise the five-level proof state by itself.

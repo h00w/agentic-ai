@@ -16,7 +16,7 @@
   <a href="https://github.com/h00w/agentic-ai/actions/workflows/ci.yml"><img src="https://github.com/h00w/agentic-ai/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.12%2B-3776AB" alt="Python 3.12+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
-  <a href="curriculum/"><img src="https://img.shields.io/badge/Curriculum-14%20Modules-0B3D91" alt="14 modules"></a>
+  <a href="curriculum/"><img src="https://img.shields.io/badge/Curriculum-16%20Modules-0B3D91" alt="16 modules"></a>
   <a href="evaluation/"><img src="https://img.shields.io/badge/Evaluation-Reproducible-6A5ACD" alt="Evaluation"></a>
   <a href="docs/security.md"><img src="https://img.shields.io/badge/Security-Defense--in--Depth-2E8B57" alt="Security"></a>
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Release-v0.1.0-1f6feb" alt="v0.1.0"></a>
@@ -45,6 +45,51 @@ This is not a collection of chatbot tutorials. The Academy treats agentic AI as 
 
 ---
 
+## Phase 1 — Provider Runtime & Structured Contracts
+
+The Academy now includes a provider-neutral LLM runtime foundation designed for reproducible AI engineering rather than one-off SDK examples.
+
+**Phase 1 engineering proof**
+
+- Provider-neutral `ProviderRequest` / `ProviderResponse` contracts validated with Pydantic.
+- Deterministic `MockProvider` for local development, CI and benchmark reproducibility.
+- Optional adapters for OpenAI, Anthropic, Gemini and Ollama.
+- Provider registry for runtime selection and extension.
+- Provider benchmark hook that records pass/fail, model, latency and token usage.
+- Secret-free CI tests for contracts, registry behavior and benchmark integration.
+- Existing deterministic agent, policy and safety paths remain unchanged.
+
+```text
+application / benchmark
+        ↓
+provider-neutral contracts
+        ↓
+provider registry
+   ┌────┼────────┬────────┬────────┐
+   ↓    ↓        ↓        ↓        ↓
+ mock  OpenAI  Anthropic Gemini   Ollama
+        ↓
+normalized response + usage + latency
+        ↓
+evaluation / release-gate pipeline
+```
+
+Install the core only:
+
+```bash
+pip install -e ".[dev]"
+```
+
+Install optional hosted-provider SDKs:
+
+```bash
+pip install -e ".[dev,providers]"
+```
+
+The mock provider is the default reference path for tests and does not require credentials. Hosted providers are opt-in.
+
+---
+
 ## Public Engineering Stack
 
 The public stack is intentionally separated by function rather than duplicated across platforms:
@@ -59,7 +104,7 @@ The public stack is intentionally separated by function rather than duplicated a
 curriculum → implementation → dataset → evaluation → interactive demo → production engineering
 ```
 
-The benchmark currently contains **48 expert-authored synthetic cases across 8 domains**, with deterministic validation and automated Hugging Face publishing. The Engineering Lab consumes the same benchmark structure to demonstrate operational evaluation and release-gate behavior.
+The benchmark currently contains **104 expert-authored synthetic cases across 8 domains** (13 per domain), with deterministic validation and automated Hugging Face publishing. The Engineering Lab consumes the same benchmark structure to demonstrate operational evaluation and release-gate behavior.
 
 ---
 
@@ -116,6 +161,8 @@ Every module is designed to answer:
 
 Concepts come before frameworks. Use a deterministic workflow when a task is stable and fully specifiable. Use an agent when uncertainty, planning, tool selection, adaptive sequencing or iterative recovery create material value. Use multi-agent systems only when specialization or parallel decomposition produces measurable benefit.
 
+The Academy learning contract is **UNDERSTAND → BUILD → BREAK → MEASURE → SECURE → SHIP → OPERATE → GOVERN**. Each deep lesson keeps reusable engineering evidence rather than ending with a notebook or prompt. See [`docs/academy-learning-contract.md`](docs/academy-learning-contract.md), [`LESSON_TEMPLATE.md`](LESSON_TEMPLATE.md), the machine-readable [`catalog.json`](catalog.json), and [Agent Loop From Scratch](curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/README.md).
+
 ## Curriculum
 
 | # | Module | Core outcome |
@@ -134,6 +181,8 @@ Concepts come before frameworks. Use a deterministic workflow when a task is sta
 | 12 | [Governance, Risk & Scaling](curriculum/12-governance-scaling/README.md) | Build risk registers, deployment gates, incident processes and scaling playbooks. |
 | 13 | [Enterprise Agentic AI Architecture](curriculum/13-enterprise-architecture/README.md) | Architect model/tool gateways, policy, identity, knowledge, evaluation and audit. |
 | 14 | [Agentic AI Leadership & Strategy](curriculum/14-agentic-ai-leadership/README.md) | Prioritize portfolios, quantify ROI/TCO and lead responsible transformation. |
+| 15 | [MCP Engineering](curriculum/15-mcp-engineering/README.md) | Engineer MCP contracts, trust boundaries, authorization, reliability and conformance evidence. |
+| 16 | [Agent Skills Engineering](curriculum/16-agent-skills-engineering/README.md) | Package portable, testable capabilities with explicit permissions, failure behavior and evidence. |
 
 ## Learning Pathways
 
@@ -148,15 +197,17 @@ Concepts come before frameworks. Use a deterministic workflow when a task is sta
 
 The Academy includes:
 
-- **14 curriculum modules** with coaching, exercises, assessments, production framing and portfolio evidence.
+- **16 curriculum modules** with coaching, exercises, assessments, production framing and portfolio evidence.
 - **10 enterprise case studies** across research, support, software engineering, cybersecurity, finance, HR, sales, healthcare administration, manufacturing and public-sector knowledge work.
 - **10 progressive portfolio projects** from a Python tool chest to the enterprise capstone.
 - **11 runnable examples** covering agent loops, function calling, tools, memory, RAG, guardrails, evaluation, multi-agent patterns, observability and secure agents.
-- **48-case evaluation and security benchmark** across eight domains with a common schema and automated validation.
+- **104-case evaluation and security benchmark** across eight balanced domains with a common schema and automated validation.
 - **Reusable evaluation infrastructure** for task success, correctness, groundedness, tool accuracy, safety, latency, token usage and estimated cost.
 - **Security architecture** based on least privilege, explicit tool permissions, validation, policy gates, human approval, sandbox boundaries, timeouts, budgets, network restrictions and audit logging.
 - **Production engineering** with tests, Docker, CI, configuration, health checks, logging, reliability patterns and operational controls.
 - **Live operational Engineering Lab** with regression profiles, release thresholds, trace inspection and downloadable evaluation reports.
+- **Curriculum-as-code controls** with a lesson contract, artifact manifests, generated catalog, structural audit and CI freshness checks.
+- **Portable Agent Skills library** for evaluation, threat modeling and production-readiness evidence review.
 
 ## Flagship Capstone
 
@@ -284,14 +335,16 @@ Completion is designed to produce portfolio evidence for roles such as:
 
 ```text
 agentic-ai/
-├── curriculum/          # 14 modules
+├── curriculum/          # 16 modules + metadata-backed deep lessons
 ├── learning-paths/      # role-based self-study sequences
 ├── case-studies/        # 10 enterprise scenarios
 ├── projects/            # 10 progressive portfolio builds
 ├── labs/                # guided implementation exercises
 ├── examples/            # safe runnable examples
 ├── evaluation/          # evaluators, metrics and regression tests
-├── dataset/             # public evaluation & security benchmark source
+├── skills/              # portable, evidence-oriented Agent Skills
+├── dataset/             # public 104-case evaluation & security benchmark source
+├── catalog.json         # filesystem-derived curriculum and skills catalog
 ├── deploy/
 │   ├── huggingface/     # Agentic AI Playground
 │   └── streamlit/       # Agentic AI Engineering Lab
@@ -304,6 +357,7 @@ agentic-ai/
 ## Release & Roadmap
 
 - Current public milestone: **v0.1.0 — Initial Academy Release**
+- Next development milestone: **v0.2.0 — Curriculum-as-Code Foundation**
 - Release notes: [`RELEASE_NOTES_v0.1.0.md`](RELEASE_NOTES_v0.1.0.md)
 - Changelog: [`CHANGELOG.md`](CHANGELOG.md)
 - Roadmap: [`ROADMAP.md`](ROADMAP.md)

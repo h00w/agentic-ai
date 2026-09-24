@@ -1,0 +1,18 @@
+{
+  "id": "artifact-agent-loop-from-scratch",
+  "type": "code",
+  "source_lesson": "04.01",
+  "summary": "Framework-neutral bounded agent loop with explicit tool registry and step-budget termination.",
+  "paths": [
+    "src/agentic_ai/from_scratch.py",
+    "tests/test_from_scratch.py"
+  ],
+  "evidence": [
+    {
+      "kind": "test",
+      "path": "tests/test_from_scratch.py",
+      "claim": "Tests cover direct completion, tool observation, unknown-tool failure and step-budget termination."
+    }
+  ],
+  "maturity": "tested"
+}

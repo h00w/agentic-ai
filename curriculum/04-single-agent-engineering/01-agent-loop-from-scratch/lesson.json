@@ -1,0 +1,18 @@
+{
+  "id": "04.01",
+  "title": "Agent Loop From Scratch",
+  "module": "04",
+  "level": "intermediate",
+  "duration_minutes": 90,
+  "prerequisites": [
+    "03-llm-agent-foundations"
+  ],
+  "outcomes": [
+    "Explain a framework-neutral agent loop",
+    "Implement deterministic tool and step boundaries",
+    "Demonstrate fail-closed unknown-tool and budget behavior"
+  ],
+  "artifacts": [
+    "curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/artifacts/artifact.json"
+  ]
+}

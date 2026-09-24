@@ -15,12 +15,13 @@ dependencies = ["pydantic>=2.7,<3"]
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.6,<1", "PyYAML>=6,<7"]
 demo = ["gradio>=5,<7", "streamlit>=1.38,<2"]
+providers = ["openai>=1.0,<2", "anthropic>=0.40,<1", "google-genai>=1,<2"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = [".", "src"]
 testpaths = ["tests", "evaluation/tests"]
 addopts = "-q"
 
