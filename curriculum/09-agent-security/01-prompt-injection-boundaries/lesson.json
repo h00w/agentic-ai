@@ -1,0 +1,18 @@
+{
+  "id": "09.01",
+  "title": "Prompt Injection and Trust Boundaries",
+  "module": "09",
+  "level": "intermediate",
+  "duration_minutes": 90,
+  "prerequisites": [
+    "08-agent-evaluation"
+  ],
+  "outcomes": [
+    "Model injection through concrete trust boundaries",
+    "Protect privileged actions from untrusted content",
+    "Create reusable security regression evidence"
+  ],
+  "artifacts": [
+    "curriculum/09-agent-security/01-prompt-injection-boundaries/artifacts/artifact.json"
+  ]
+}

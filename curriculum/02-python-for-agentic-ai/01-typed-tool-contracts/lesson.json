@@ -1,0 +1,18 @@
+{
+  "id": "02.01",
+  "title": "Typed Tool Contracts in Python",
+  "module": "02",
+  "level": "beginner",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "01-exploring-agentic-ai"
+  ],
+  "outcomes": [
+    "Design explicit Python-facing tool contracts",
+    "Separate schema validation from authorization",
+    "Identify contract changes that require review"
+  ],
+  "artifacts": [
+    "curriculum/02-python-for-agentic-ai/01-typed-tool-contracts/artifacts/artifact.json"
+  ]
+}

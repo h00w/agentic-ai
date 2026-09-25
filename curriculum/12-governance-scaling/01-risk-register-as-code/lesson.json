@@ -1,0 +1,18 @@
+{
+  "id": "12.01",
+  "title": "Risk Register as Code",
+  "module": "12",
+  "level": "advanced",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "11-observability"
+  ],
+  "outcomes": [
+    "Translate risks into owned controls",
+    "Tie governance claims to evidence",
+    "Use operational feedback to update risk posture"
+  ],
+  "artifacts": [
+    "curriculum/12-governance-scaling/01-risk-register-as-code/artifacts/artifact.json"
+  ]
+}

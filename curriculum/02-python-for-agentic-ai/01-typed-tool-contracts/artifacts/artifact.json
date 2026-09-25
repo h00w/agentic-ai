@@ -1,0 +1,17 @@
+{
+  "id": "artifact-02-01-typed-tool-contracts",
+  "type": "schema",
+  "source_lesson": "02.01",
+  "summary": "Typed Tool Contract Worksheet for Typed Tool Contracts in Python.",
+  "paths": [
+    "curriculum/02-python-for-agentic-ai/01-typed-tool-contracts/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/02-python-for-agentic-ai/01-typed-tool-contracts/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

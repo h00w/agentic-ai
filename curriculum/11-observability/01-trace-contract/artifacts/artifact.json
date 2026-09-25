@@ -1,0 +1,17 @@
+{
+  "id": "artifact-11-01-trace-contract",
+  "type": "trace",
+  "source_lesson": "11.01",
+  "summary": "Agent Trace Contract Worksheet for Trace Contract and Correlation IDs.",
+  "paths": [
+    "curriculum/11-observability/01-trace-contract/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/11-observability/01-trace-contract/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

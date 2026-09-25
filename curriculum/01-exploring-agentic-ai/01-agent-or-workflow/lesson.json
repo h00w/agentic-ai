@@ -1,0 +1,16 @@
+{
+  "id": "01.01",
+  "title": "Agent or Workflow Decision Record",
+  "module": "01",
+  "level": "beginner",
+  "duration_minutes": 60,
+  "prerequisites": [],
+  "outcomes": [
+    "Distinguish agentic work from deterministic automation",
+    "Justify autonomy using system evidence",
+    "Produce a reusable architecture decision record"
+  ],
+  "artifacts": [
+    "curriculum/01-exploring-agentic-ai/01-agent-or-workflow/artifacts/artifact.json"
+  ]
+}

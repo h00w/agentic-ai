@@ -1,0 +1,17 @@
+{
+  "id": "artifact-14-01-portfolio-evidence",
+  "type": "evaluation",
+  "source_lesson": "14.01",
+  "summary": "Agentic AI Portfolio Evidence Worksheet for Agentic AI Portfolio Evidence and ROI/TCO.",
+  "paths": [
+    "curriculum/14-agentic-ai-leadership/01-portfolio-evidence/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/14-agentic-ai-leadership/01-portfolio-evidence/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

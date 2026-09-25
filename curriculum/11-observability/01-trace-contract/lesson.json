@@ -1,0 +1,18 @@
+{
+  "id": "11.01",
+  "title": "Trace Contract and Correlation IDs",
+  "module": "11",
+  "level": "advanced",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "10-production-engineering"
+  ],
+  "outcomes": [
+    "Design reconstructable agent traces",
+    "Separate observability evidence from sensitive payloads",
+    "Identify missing events that invalidate audit claims"
+  ],
+  "artifacts": [
+    "curriculum/11-observability/01-trace-contract/artifacts/artifact.json"
+  ]
+}
