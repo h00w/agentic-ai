@@ -20,9 +20,7 @@ def provider_factory(module_name: str, class_name: str) -> ProviderFactory:
 class ProviderRegistry:
     def __init__(self) -> None:
         self._factories: dict[str, ProviderFactory] = {
-            "anthropic": provider_factory(
-                "agentic_ai.providers.anthropic", "AnthropicProvider"
-            ),
+            "anthropic": provider_factory("agentic_ai.providers.anthropic", "AnthropicProvider"),
             "gemini": provider_factory("agentic_ai.providers.gemini", "GeminiProvider"),
             "mock": provider_factory("agentic_ai.providers.mock", "MockProvider"),
             "ollama": provider_factory("agentic_ai.providers.ollama", "OllamaProvider"),
