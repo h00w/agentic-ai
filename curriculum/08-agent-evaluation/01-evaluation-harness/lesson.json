@@ -1,0 +1,18 @@
+{
+  "id": "08.01",
+  "title": "Evaluation Harness and Release Thresholds",
+  "module": "08",
+  "level": "intermediate",
+  "duration_minutes": 90,
+  "prerequisites": [
+    "07-multi-agent-systems"
+  ],
+  "outcomes": [
+    "Turn claims into measurable evaluation cases",
+    "Define hard release thresholds",
+    "Separate aggregate quality from critical safety slices"
+  ],
+  "artifacts": [
+    "curriculum/08-agent-evaluation/01-evaluation-harness/artifacts/artifact.json"
+  ]
+}

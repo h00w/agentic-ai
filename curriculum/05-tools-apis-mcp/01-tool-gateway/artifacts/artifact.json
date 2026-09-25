@@ -1,0 +1,17 @@
+{
+  "id": "artifact-05-01-tool-gateway",
+  "type": "policy",
+  "source_lesson": "05.01",
+  "summary": "Tool Gateway Policy Worksheet for Tool Gateway and Permission Boundary.",
+  "paths": [
+    "curriculum/05-tools-apis-mcp/01-tool-gateway/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/05-tools-apis-mcp/01-tool-gateway/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

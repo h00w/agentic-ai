@@ -1,0 +1,18 @@
+{
+  "id": "03.01",
+  "title": "Probabilistic Reasoning, Deterministic Control",
+  "module": "03",
+  "level": "beginner",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "02-python-for-agentic-ai"
+  ],
+  "outcomes": [
+    "Separate reasoning from control-plane guarantees",
+    "Identify prompt-only controls that should be deterministic",
+    "Produce a control-boundary policy artifact"
+  ],
+  "artifacts": [
+    "curriculum/03-llm-agent-foundations/01-control-boundaries/artifacts/artifact.json"
+  ]
+}

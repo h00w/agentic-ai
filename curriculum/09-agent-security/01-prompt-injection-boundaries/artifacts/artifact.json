@@ -1,0 +1,17 @@
+{
+  "id": "artifact-09-01-prompt-injection-boundaries",
+  "type": "threat_model",
+  "source_lesson": "09.01",
+  "summary": "Prompt Injection Threat Model Worksheet for Prompt Injection and Trust Boundaries.",
+  "paths": [
+    "curriculum/09-agent-security/01-prompt-injection-boundaries/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/09-agent-security/01-prompt-injection-boundaries/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

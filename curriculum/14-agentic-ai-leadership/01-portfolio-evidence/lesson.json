@@ -1,0 +1,18 @@
+{
+  "id": "14.01",
+  "title": "Agentic AI Portfolio Evidence and ROI/TCO",
+  "module": "14",
+  "level": "leadership",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "13-enterprise-architecture"
+  ],
+  "outcomes": [
+    "Frame Agentic AI value against a measurable baseline",
+    "Include operating and governance cost in TCO",
+    "Sequence investments by evidence maturity"
+  ],
+  "artifacts": [
+    "curriculum/14-agentic-ai-leadership/01-portfolio-evidence/artifacts/artifact.json"
+  ]
+}

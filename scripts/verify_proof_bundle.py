@@ -48,8 +48,10 @@ def validate_manifest_entry(item: object, index: int) -> tuple[str, str, int] | 
     path = item.get("path")
     sha256_value = item.get("sha256")
     byte_count = item.get("bytes")
-    if not isinstance(path, str) or not isinstance(sha256_value, str) or not isinstance(
-        byte_count, int
+    if (
+        not isinstance(path, str)
+        or not isinstance(sha256_value, str)
+        or not isinstance(byte_count, int)
     ):
         raise ValueError(f"malformed_entry:{index}")
     return path, sha256_value, byte_count
@@ -69,9 +71,7 @@ def verify_bundle(bundle: pathlib.Path) -> dict:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
             for index, item in enumerate(manifest.get("files", [])):
                 try:
-                    relative_path, sha256_value, byte_count = validate_manifest_entry(
-                        item, index
-                    )
+                    relative_path, sha256_value, byte_count = validate_manifest_entry(item, index)
                 except ValueError as exc:
                     errors.append(str(exc))
                     continue

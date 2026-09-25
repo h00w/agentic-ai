@@ -1,0 +1,18 @@
+{
+  "id": "10.01",
+  "title": "Production Release Gate",
+  "module": "10",
+  "level": "advanced",
+  "duration_minutes": 90,
+  "prerequisites": [
+    "09-agent-security"
+  ],
+  "outcomes": [
+    "Assemble production-candidate evidence",
+    "Block releases with missing mandatory evidence",
+    "Distinguish readiness from observed production validation"
+  ],
+  "artifacts": [
+    "curriculum/10-production-engineering/01-production-release-gate/artifacts/artifact.json"
+  ]
+}

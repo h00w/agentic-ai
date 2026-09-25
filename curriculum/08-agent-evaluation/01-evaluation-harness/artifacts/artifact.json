@@ -1,0 +1,17 @@
+{
+  "id": "artifact-08-01-evaluation-harness",
+  "type": "evaluation",
+  "source_lesson": "08.01",
+  "summary": "Evaluation Harness Worksheet for Evaluation Harness and Release Thresholds.",
+  "paths": [
+    "curriculum/08-agent-evaluation/01-evaluation-harness/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/08-agent-evaluation/01-evaluation-harness/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

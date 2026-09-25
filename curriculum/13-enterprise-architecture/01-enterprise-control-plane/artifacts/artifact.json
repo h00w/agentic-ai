@@ -1,0 +1,17 @@
+{
+  "id": "artifact-13-01-enterprise-control-plane",
+  "type": "architecture",
+  "source_lesson": "13.01",
+  "summary": "Enterprise Agent Control Plane Worksheet for Enterprise Agent Control Plane.",
+  "paths": [
+    "curriculum/13-enterprise-architecture/01-enterprise-control-plane/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/13-enterprise-architecture/01-enterprise-control-plane/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

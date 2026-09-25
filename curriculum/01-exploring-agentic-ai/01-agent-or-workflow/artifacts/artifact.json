@@ -1,0 +1,17 @@
+{
+  "id": "artifact-01-01-agent-or-workflow",
+  "type": "architecture",
+  "source_lesson": "01.01",
+  "summary": "Agent or Workflow Decision Worksheet for Agent or Workflow Decision Record.",
+  "paths": [
+    "curriculum/01-exploring-agentic-ai/01-agent-or-workflow/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/01-exploring-agentic-ai/01-agent-or-workflow/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

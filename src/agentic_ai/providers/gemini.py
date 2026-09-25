@@ -23,7 +23,9 @@ class GeminiProvider(LLMProvider):
 
     def generate(self, request: ProviderRequest) -> ProviderResponse:
         started = perf_counter()
-        system_messages = [message.content for message in request.messages if message.role == "system"]
+        system_messages = [
+            message.content for message in request.messages if message.role == "system"
+        ]
         contents = [
             {
                 "role": "model" if message.role == "assistant" else "user",

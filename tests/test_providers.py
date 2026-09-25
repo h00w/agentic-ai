@@ -182,9 +182,7 @@ def test_ollama_provider_passes_max_tokens():
             return False
 
         def read(self):
-            return (
-                b'{"message":{"content":"done"},"prompt_eval_count":3,"eval_count":2}'
-            )
+            return b'{"message":{"content":"done"},"prompt_eval_count":3,"eval_count":2}'
 
     def fake_urlopen(request, timeout):
         payloads.append(request.data.decode())

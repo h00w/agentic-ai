@@ -1,0 +1,17 @@
+{
+  "id": "artifact-03-01-control-boundaries",
+  "type": "policy",
+  "source_lesson": "03.01",
+  "summary": "Control Boundary Worksheet for Probabilistic Reasoning, Deterministic Control.",
+  "paths": [
+    "curriculum/03-llm-agent-foundations/01-control-boundaries/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/03-llm-agent-foundations/01-control-boundaries/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artifact-10-01-production-release-gate",
+  "type": "release_evidence",
+  "source_lesson": "10.01",
+  "summary": "Production Release Gate Worksheet for Production Release Gate.",
+  "paths": [
+    "curriculum/10-production-engineering/01-production-release-gate/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/10-production-engineering/01-production-release-gate/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

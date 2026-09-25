@@ -1,0 +1,17 @@
+{
+  "id": "artifact-12-01-risk-register-as-code",
+  "type": "policy",
+  "source_lesson": "12.01",
+  "summary": "Risk Register Worksheet for Risk Register as Code.",
+  "paths": [
+    "curriculum/12-governance-scaling/01-risk-register-as-code/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/12-governance-scaling/01-risk-register-as-code/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

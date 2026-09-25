@@ -161,7 +161,7 @@ Every module is designed to answer:
 
 Concepts come before frameworks. Use a deterministic workflow when a task is stable and fully specifiable. Use an agent when uncertainty, planning, tool selection, adaptive sequencing or iterative recovery create material value. Use multi-agent systems only when specialization or parallel decomposition produces measurable benefit.
 
-The Academy learning contract is **UNDERSTAND → BUILD → BREAK → MEASURE → SECURE → SHIP → OPERATE → GOVERN**. Each deep lesson keeps reusable engineering evidence rather than ending with a notebook or prompt. See [`docs/academy-learning-contract.md`](docs/academy-learning-contract.md), [`LESSON_TEMPLATE.md`](LESSON_TEMPLATE.md), the machine-readable [`catalog.json`](catalog.json), and [Agent Loop From Scratch](curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/README.md).
+The Academy learning contract is **UNDERSTAND → BUILD → BREAK → MEASURE → SECURE → SHIP → OPERATE → GOVERN**. Each deep lesson keeps reusable engineering evidence rather than ending with a notebook or prompt. See [`docs/academy-learning-contract.md`](docs/academy-learning-contract.md), [`LESSON_TEMPLATE.md`](LESSON_TEMPLATE.md), [`lesson-schema.json`](lesson-schema.json), the machine-readable [`catalog.json`](catalog.json), the [curriculum coverage matrix](docs/curriculum-coverage.md), and [Agent Loop From Scratch](curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/README.md).
 
 ## Curriculum
 
@@ -198,6 +198,7 @@ The Academy learning contract is **UNDERSTAND → BUILD → BREAK → MEASURE �
 The Academy includes:
 
 - **16 curriculum modules** with coaching, exercises, assessments, production framing and portfolio evidence.
+- **16 metadata-backed deep lessons** — at least one in every module — following the Academy learning contract and producing reusable evidence.
 - **10 enterprise case studies** across research, support, software engineering, cybersecurity, finance, HR, sales, healthcare administration, manufacturing and public-sector knowledge work.
 - **10 progressive portfolio projects** from a Python tool chest to the enterprise capstone.
 - **11 runnable examples** covering agent loops, function calling, tools, memory, RAG, guardrails, evaluation, multi-agent patterns, observability and secure agents.
@@ -206,7 +207,7 @@ The Academy includes:
 - **Security architecture** based on least privilege, explicit tool permissions, validation, policy gates, human approval, sandbox boundaries, timeouts, budgets, network restrictions and audit logging.
 - **Production engineering** with tests, Docker, CI, configuration, health checks, logging, reliability patterns and operational controls.
 - **Live operational Engineering Lab** with regression profiles, release thresholds, trace inspection and downloadable evaluation reports.
-- **Curriculum-as-code controls** with a lesson contract, artifact manifests, generated catalog, structural audit and CI freshness checks.
+- **Curriculum-as-code controls** with a lesson schema, lesson factory, artifact manifests, generated catalog, 16/16 module coverage enforcement and CI freshness checks.
 - **Portable Agent Skills library** for evaluation, threat modeling and production-readiness evidence review.
 
 ## Flagship Capstone
@@ -357,7 +358,7 @@ agentic-ai/
 ## Release & Roadmap
 
 - Current public milestone: **v0.1.0 — Initial Academy Release**
-- Next development milestone: **v0.2.0 — Curriculum-as-Code Foundation**
+- Current development milestone: **v0.3.0 — Lesson Factory & Full-Module Coverage**
 - Release notes: [`RELEASE_NOTES_v0.1.0.md`](RELEASE_NOTES_v0.1.0.md)
 - Changelog: [`CHANGELOG.md`](CHANGELOG.md)
 - Roadmap: [`ROADMAP.md`](ROADMAP.md)

@@ -1,0 +1,18 @@
+{
+  "id": "06.01",
+  "title": "Grounded Retrieval and Evidence Discipline",
+  "module": "06",
+  "level": "intermediate",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "05-tools-apis-mcp"
+  ],
+  "outcomes": [
+    "Map generated claims to explicit evidence",
+    "Handle stale and conflicting sources",
+    "Preserve trust boundaries around retrieved content"
+  ],
+  "artifacts": [
+    "curriculum/06-rag-memory-knowledge/01-grounded-retrieval/artifacts/artifact.json"
+  ]
+}

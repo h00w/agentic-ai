@@ -1,0 +1,17 @@
+{
+  "id": "artifact-06-01-grounded-retrieval",
+  "type": "evaluation",
+  "source_lesson": "06.01",
+  "summary": "Grounded Retrieval Evidence Worksheet for Grounded Retrieval and Evidence Discipline.",
+  "paths": [
+    "curriculum/06-rag-memory-knowledge/01-grounded-retrieval/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/06-rag-memory-knowledge/01-grounded-retrieval/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artifact-07-01-supervisor-worker",
+  "type": "architecture",
+  "source_lesson": "07.01",
+  "summary": "Supervisor–Worker Contract Worksheet for Supervisor–Worker Coordination Contract.",
+  "paths": [
+    "curriculum/07-multi-agent-systems/01-supervisor-worker/artifacts/worksheet.md"
+  ],
+  "evidence": [
+    {
+      "kind": "worksheet",
+      "path": "curriculum/07-multi-agent-systems/01-supervisor-worker/artifacts/worksheet.md",
+      "claim": "The worksheet records bounded engineering evidence produced by the lesson."
+    }
+  ],
+  "maturity": "learning"
+}

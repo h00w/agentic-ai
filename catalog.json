@@ -1,24 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "filesystem-derived",
   "modules": [
     {
       "id": "01",
       "slug": "exploring-agentic-ai",
       "path": "curriculum/01-exploring-agentic-ai",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "02",
       "slug": "python-for-agentic-ai",
       "path": "curriculum/02-python-for-agentic-ai",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "03",
       "slug": "llm-agent-foundations",
       "path": "curriculum/03-llm-agent-foundations",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "04",
@@ -30,61 +30,61 @@
       "id": "05",
       "slug": "tools-apis-mcp",
       "path": "curriculum/05-tools-apis-mcp",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "06",
       "slug": "rag-memory-knowledge",
       "path": "curriculum/06-rag-memory-knowledge",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "07",
       "slug": "multi-agent-systems",
       "path": "curriculum/07-multi-agent-systems",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "08",
       "slug": "agent-evaluation",
       "path": "curriculum/08-agent-evaluation",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "09",
       "slug": "agent-security",
       "path": "curriculum/09-agent-security",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "10",
       "slug": "production-engineering",
       "path": "curriculum/10-production-engineering",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "11",
       "slug": "observability",
       "path": "curriculum/11-observability",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "12",
       "slug": "governance-scaling",
       "path": "curriculum/12-governance-scaling",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "13",
       "slug": "enterprise-architecture",
       "path": "curriculum/13-enterprise-architecture",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "14",
       "slug": "agentic-ai-leadership",
       "path": "curriculum/14-agentic-ai-leadership",
-      "lesson_count": 0
+      "lesson_count": 1
     },
     {
       "id": "15",
@@ -100,6 +100,61 @@
     }
   ],
   "lessons": [
+    {
+      "id": "01.01",
+      "title": "Agent or Workflow Decision Record",
+      "module": "01",
+      "level": "beginner",
+      "duration_minutes": 60,
+      "prerequisites": [],
+      "outcomes": [
+        "Distinguish agentic work from deterministic automation",
+        "Justify autonomy using system evidence",
+        "Produce a reusable architecture decision record"
+      ],
+      "artifacts": [
+        "curriculum/01-exploring-agentic-ai/01-agent-or-workflow/artifacts/artifact.json"
+      ],
+      "path": "curriculum/01-exploring-agentic-ai/01-agent-or-workflow"
+    },
+    {
+      "id": "02.01",
+      "title": "Typed Tool Contracts in Python",
+      "module": "02",
+      "level": "beginner",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "01-exploring-agentic-ai"
+      ],
+      "outcomes": [
+        "Design explicit Python-facing tool contracts",
+        "Separate schema validation from authorization",
+        "Identify contract changes that require review"
+      ],
+      "artifacts": [
+        "curriculum/02-python-for-agentic-ai/01-typed-tool-contracts/artifacts/artifact.json"
+      ],
+      "path": "curriculum/02-python-for-agentic-ai/01-typed-tool-contracts"
+    },
+    {
+      "id": "03.01",
+      "title": "Probabilistic Reasoning, Deterministic Control",
+      "module": "03",
+      "level": "beginner",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "02-python-for-agentic-ai"
+      ],
+      "outcomes": [
+        "Separate reasoning from control-plane guarantees",
+        "Identify prompt-only controls that should be deterministic",
+        "Produce a control-boundary policy artifact"
+      ],
+      "artifacts": [
+        "curriculum/03-llm-agent-foundations/01-control-boundaries/artifacts/artifact.json"
+      ],
+      "path": "curriculum/03-llm-agent-foundations/01-control-boundaries"
+    },
     {
       "id": "04.01",
       "title": "Agent Loop From Scratch",
@@ -118,6 +173,196 @@
         "curriculum/04-single-agent-engineering/01-agent-loop-from-scratch/artifacts/artifact.json"
       ],
       "path": "curriculum/04-single-agent-engineering/01-agent-loop-from-scratch"
+    },
+    {
+      "id": "05.01",
+      "title": "Tool Gateway and Permission Boundary",
+      "module": "05",
+      "level": "intermediate",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "04-single-agent-engineering"
+      ],
+      "outcomes": [
+        "Design a least-privilege tool gateway",
+        "Separate discovery from authority",
+        "Define measurable gateway failure behavior"
+      ],
+      "artifacts": [
+        "curriculum/05-tools-apis-mcp/01-tool-gateway/artifacts/artifact.json"
+      ],
+      "path": "curriculum/05-tools-apis-mcp/01-tool-gateway"
+    },
+    {
+      "id": "06.01",
+      "title": "Grounded Retrieval and Evidence Discipline",
+      "module": "06",
+      "level": "intermediate",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "05-tools-apis-mcp"
+      ],
+      "outcomes": [
+        "Map generated claims to explicit evidence",
+        "Handle stale and conflicting sources",
+        "Preserve trust boundaries around retrieved content"
+      ],
+      "artifacts": [
+        "curriculum/06-rag-memory-knowledge/01-grounded-retrieval/artifacts/artifact.json"
+      ],
+      "path": "curriculum/06-rag-memory-knowledge/01-grounded-retrieval"
+    },
+    {
+      "id": "07.01",
+      "title": "Supervisor–Worker Coordination Contract",
+      "module": "07",
+      "level": "intermediate",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "06-rag-memory-knowledge"
+      ],
+      "outcomes": [
+        "Justify multi-agent decomposition",
+        "Design bounded worker roles",
+        "Specify reconstructable handoffs and global controls"
+      ],
+      "artifacts": [
+        "curriculum/07-multi-agent-systems/01-supervisor-worker/artifacts/artifact.json"
+      ],
+      "path": "curriculum/07-multi-agent-systems/01-supervisor-worker"
+    },
+    {
+      "id": "08.01",
+      "title": "Evaluation Harness and Release Thresholds",
+      "module": "08",
+      "level": "intermediate",
+      "duration_minutes": 90,
+      "prerequisites": [
+        "07-multi-agent-systems"
+      ],
+      "outcomes": [
+        "Turn claims into measurable evaluation cases",
+        "Define hard release thresholds",
+        "Separate aggregate quality from critical safety slices"
+      ],
+      "artifacts": [
+        "curriculum/08-agent-evaluation/01-evaluation-harness/artifacts/artifact.json"
+      ],
+      "path": "curriculum/08-agent-evaluation/01-evaluation-harness"
+    },
+    {
+      "id": "09.01",
+      "title": "Prompt Injection and Trust Boundaries",
+      "module": "09",
+      "level": "intermediate",
+      "duration_minutes": 90,
+      "prerequisites": [
+        "08-agent-evaluation"
+      ],
+      "outcomes": [
+        "Model injection through concrete trust boundaries",
+        "Protect privileged actions from untrusted content",
+        "Create reusable security regression evidence"
+      ],
+      "artifacts": [
+        "curriculum/09-agent-security/01-prompt-injection-boundaries/artifacts/artifact.json"
+      ],
+      "path": "curriculum/09-agent-security/01-prompt-injection-boundaries"
+    },
+    {
+      "id": "10.01",
+      "title": "Production Release Gate",
+      "module": "10",
+      "level": "advanced",
+      "duration_minutes": 90,
+      "prerequisites": [
+        "09-agent-security"
+      ],
+      "outcomes": [
+        "Assemble production-candidate evidence",
+        "Block releases with missing mandatory evidence",
+        "Distinguish readiness from observed production validation"
+      ],
+      "artifacts": [
+        "curriculum/10-production-engineering/01-production-release-gate/artifacts/artifact.json"
+      ],
+      "path": "curriculum/10-production-engineering/01-production-release-gate"
+    },
+    {
+      "id": "11.01",
+      "title": "Trace Contract and Correlation IDs",
+      "module": "11",
+      "level": "advanced",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "10-production-engineering"
+      ],
+      "outcomes": [
+        "Design reconstructable agent traces",
+        "Separate observability evidence from sensitive payloads",
+        "Identify missing events that invalidate audit claims"
+      ],
+      "artifacts": [
+        "curriculum/11-observability/01-trace-contract/artifacts/artifact.json"
+      ],
+      "path": "curriculum/11-observability/01-trace-contract"
+    },
+    {
+      "id": "12.01",
+      "title": "Risk Register as Code",
+      "module": "12",
+      "level": "advanced",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "11-observability"
+      ],
+      "outcomes": [
+        "Translate risks into owned controls",
+        "Tie governance claims to evidence",
+        "Use operational feedback to update risk posture"
+      ],
+      "artifacts": [
+        "curriculum/12-governance-scaling/01-risk-register-as-code/artifacts/artifact.json"
+      ],
+      "path": "curriculum/12-governance-scaling/01-risk-register-as-code"
+    },
+    {
+      "id": "13.01",
+      "title": "Enterprise Agent Control Plane",
+      "module": "13",
+      "level": "advanced",
+      "duration_minutes": 90,
+      "prerequisites": [
+        "12-governance-scaling"
+      ],
+      "outcomes": [
+        "Separate enterprise control plane from application logic",
+        "Design shared trustworthy-AI services",
+        "Define extension and tenancy boundaries"
+      ],
+      "artifacts": [
+        "curriculum/13-enterprise-architecture/01-enterprise-control-plane/artifacts/artifact.json"
+      ],
+      "path": "curriculum/13-enterprise-architecture/01-enterprise-control-plane"
+    },
+    {
+      "id": "14.01",
+      "title": "Agentic AI Portfolio Evidence and ROI/TCO",
+      "module": "14",
+      "level": "leadership",
+      "duration_minutes": 75,
+      "prerequisites": [
+        "13-enterprise-architecture"
+      ],
+      "outcomes": [
+        "Frame Agentic AI value against a measurable baseline",
+        "Include operating and governance cost in TCO",
+        "Sequence investments by evidence maturity"
+      ],
+      "artifacts": [
+        "curriculum/14-agentic-ai-leadership/01-portfolio-evidence/artifacts/artifact.json"
+      ],
+      "path": "curriculum/14-agentic-ai-leadership/01-portfolio-evidence"
     },
     {
       "id": "15.01",
@@ -175,7 +420,10 @@
   ],
   "totals": {
     "modules": 16,
-    "lessons_with_metadata": 3,
+    "modules_with_lessons": 16,
+    "module_coverage_percent": 100.0,
+    "lessons_with_metadata": 16,
+    "total_duration_minutes": 1260,
     "skills": 3
   }
 }

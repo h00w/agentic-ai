@@ -1,0 +1,18 @@
+{
+  "id": "05.01",
+  "title": "Tool Gateway and Permission Boundary",
+  "module": "05",
+  "level": "intermediate",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "04-single-agent-engineering"
+  ],
+  "outcomes": [
+    "Design a least-privilege tool gateway",
+    "Separate discovery from authority",
+    "Define measurable gateway failure behavior"
+  ],
+  "artifacts": [
+    "curriculum/05-tools-apis-mcp/01-tool-gateway/artifacts/artifact.json"
+  ]
+}

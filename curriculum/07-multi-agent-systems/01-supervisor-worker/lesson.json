@@ -1,0 +1,18 @@
+{
+  "id": "07.01",
+  "title": "Supervisor–Worker Coordination Contract",
+  "module": "07",
+  "level": "intermediate",
+  "duration_minutes": 75,
+  "prerequisites": [
+    "06-rag-memory-knowledge"
+  ],
+  "outcomes": [
+    "Justify multi-agent decomposition",
+    "Design bounded worker roles",
+    "Specify reconstructable handoffs and global controls"
+  ],
+  "artifacts": [
+    "curriculum/07-multi-agent-systems/01-supervisor-worker/artifacts/artifact.json"
+  ]
+}
