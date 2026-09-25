@@ -53,9 +53,7 @@ def main() -> None:
         errors.append(f"expected at least 16 modules, found {len(modules)}")
 
     lesson_ids: set[str] = set()
-    module_lesson_counts: dict[str, int] = {
-        module.name.split("-", 1)[0]: 0 for module in modules
-    }
+    module_lesson_counts: dict[str, int] = {module.name.split("-", 1)[0]: 0 for module in modules}
     artifact_count = 0
 
     for meta_path in sorted(CURRICULUM.glob("[0-9][0-9]-*/*/lesson.json")):
