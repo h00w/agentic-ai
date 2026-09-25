@@ -421,7 +421,7 @@
   "totals": {
     "modules": 16,
     "modules_with_lessons": 16,
-    "module_coverage_percent": 100,
+    "module_coverage_percent": 100.0,
     "lessons_with_metadata": 16,
     "total_duration_minutes": 1260,
     "skills": 3
