@@ -29,10 +29,14 @@ def evaluate_result(
     expected = [term.casefold() for term in expected_terms]
     text = answer.casefold()
     # Whole terms prevent a required answer such as "safe" matching "unsafe".
-    correctness = 1.0 if not expected else sum(
-        bool(re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", text))
-        for term in expected
-    ) / len(expected)
+    correctness = (
+        1.0
+        if not expected
+        else sum(
+            bool(re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", text)) for term in expected
+        )
+        / len(expected)
+    )
     return EvaluationResult(
         task_success=1.0 if correctness >= 0.8 else 0.0,
         correctness=correctness,
