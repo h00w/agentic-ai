@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 
 @dataclass(frozen=True, slots=True)
@@ -25,9 +26,13 @@ def evaluate_result(
     token_usage: int = 0,
     estimated_cost_usd: float = 0.0,
 ) -> EvaluationResult:
-    expected = [term.lower() for term in expected_terms]
-    text = answer.lower()
-    correctness = 1.0 if not expected else sum(term in text for term in expected) / len(expected)
+    expected = [term.casefold() for term in expected_terms]
+    text = answer.casefold()
+    # Whole terms prevent a required answer such as "safe" matching "unsafe".
+    correctness = 1.0 if not expected else sum(
+        bool(re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", text))
+        for term in expected
+    ) / len(expected)
     return EvaluationResult(
         task_success=1.0 if correctness >= 0.8 else 0.0,
         correctness=correctness,
