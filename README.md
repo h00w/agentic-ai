@@ -56,6 +56,7 @@ The Academy now includes a provider-neutral LLM runtime foundation designed for 
 - Optional adapters for OpenAI, Anthropic, Gemini and Ollama.
 - Provider registry for runtime selection and extension.
 - Provider benchmark hook that records pass/fail, model, latency and token usage.
+- Paired provider-run comparison identifies missing, unexpected, and regressed case IDs before interpreting aggregate pass rates.
 - Secret-free CI tests for contracts, registry behavior and benchmark integration.
 - Existing deterministic agent, policy and safety paths remain unchanged.
 
