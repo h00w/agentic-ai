@@ -1,5 +1,10 @@
 from agentic_ai.providers.mock import MockProvider
-from evaluation.provider_benchmark import ProviderBenchmarkCase, run_provider_case
+from evaluation.provider_benchmark import (
+    ProviderBenchmarkCase,
+    ProviderBenchmarkResult,
+    compare_provider_runs,
+    run_provider_case,
+)
 
 
 def test_provider_benchmark_case_passes_for_expected_term():
@@ -14,3 +19,27 @@ def test_provider_benchmark_case_passes_for_expected_term():
     )
     assert result.passed
     assert result.provider == "mock"
+
+
+def _result(case_id: str, passed: bool) -> ProviderBenchmarkResult:
+    return ProviderBenchmarkResult(case_id, "mock", "mock-1", passed, 10.0, 5)
+
+
+def test_comparison_exposes_missing_cases_and_regressions():
+    comparison = compare_provider_runs(
+        [_result("a", True), _result("b", True)],
+        [_result("a", False), _result("c", True)],
+    )
+    assert not comparison.aligned
+    assert comparison.regressed_case_ids == ("a",)
+    assert comparison.missing_case_ids == ("b",)
+    assert comparison.unexpected_case_ids == ("c",)
+
+
+def test_comparison_rejects_duplicate_cases():
+    try:
+        compare_provider_runs([_result("a", True), _result("a", False)], [_result("a", True)])
+    except ValueError as exc:
+        assert "duplicate" in str(exc)
+    else:
+        raise AssertionError("duplicate cases must be rejected")

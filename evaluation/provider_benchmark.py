@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 
 from agentic_ai.contracts import Message, ProviderRequest
+from agentic_ai.evaluation import evaluate_result
 from agentic_ai.providers.base import LLMProvider
 
 
@@ -23,6 +25,51 @@ class ProviderBenchmarkResult:
     total_tokens: int
 
 
+@dataclass(frozen=True, slots=True)
+class ProviderComparison:
+    aligned: bool
+    baseline_pass_rate: float
+    candidate_pass_rate: float
+    regressed_case_ids: tuple[str, ...]
+    missing_case_ids: tuple[str, ...]
+    unexpected_case_ids: tuple[str, ...]
+
+
+def compare_provider_runs(
+    baseline: Iterable[ProviderBenchmarkResult],
+    candidate: Iterable[ProviderBenchmarkResult],
+) -> ProviderComparison:
+    def indexed(rows: Iterable[ProviderBenchmarkResult]) -> dict[str, ProviderBenchmarkResult]:
+        result: dict[str, ProviderBenchmarkResult] = {}
+        for row in rows:
+            if row.case_id in result:
+                raise ValueError(f"duplicate benchmark case_id: {row.case_id}")
+            result[row.case_id] = row
+        if not result:
+            raise ValueError("benchmark run must contain cases")
+        return result
+
+    base = indexed(baseline)
+    cand = indexed(candidate)
+    missing = tuple(sorted(base.keys() - cand.keys()))
+    unexpected = tuple(sorted(cand.keys() - base.keys()))
+    regressions = tuple(
+        sorted(
+            case_id
+            for case_id in base.keys() & cand.keys()
+            if base[case_id].passed and not cand[case_id].passed
+        )
+    )
+    return ProviderComparison(
+        aligned=not missing and not unexpected,
+        baseline_pass_rate=sum(row.passed for row in base.values()) / len(base),
+        candidate_pass_rate=sum(row.passed for row in cand.values()) / len(cand),
+        regressed_case_ids=regressions,
+        missing_case_ids=missing,
+        unexpected_case_ids=unexpected,
+    )
+
+
 def run_provider_case(
     provider: LLMProvider,
     *,
@@ -35,8 +82,10 @@ def run_provider_case(
             messages=[Message(role="user", content=case.prompt)],
         )
     )
-    lowered = response.text.lower()
-    passed = all(term.lower() in lowered for term in case.expected_terms)
+    passed = (
+        evaluate_result(expected_terms=list(case.expected_terms), answer=response.text).task_success
+        == 1.0
+    )
     return ProviderBenchmarkResult(
         case_id=case.case_id,
         provider=response.provider,
