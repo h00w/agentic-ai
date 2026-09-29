@@ -43,3 +43,13 @@ def test_comparison_rejects_duplicate_cases():
         assert "duplicate" in str(exc)
     else:
         raise AssertionError("duplicate cases must be rejected")
+
+
+def test_comparison_rejects_mixed_provider_identity():
+    import pytest
+
+    with pytest.raises(ValueError, match="mixes provider/model"):
+        compare_provider_runs(
+            [_result("a", True), ProviderBenchmarkResult("b", "other", "model-2", True, 10.0, 5)],
+            [_result("a", True)],
+        )

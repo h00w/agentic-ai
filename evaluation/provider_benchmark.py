@@ -41,7 +41,14 @@ def compare_provider_runs(
 ) -> ProviderComparison:
     def indexed(rows: Iterable[ProviderBenchmarkResult]) -> dict[str, ProviderBenchmarkResult]:
         result: dict[str, ProviderBenchmarkResult] = {}
+        identity: tuple[str, str] | None = None
         for row in rows:
+            if not row.case_id.strip() or not row.provider.strip() or not row.model.strip():
+                raise ValueError("benchmark case and provider/model identity must be non-empty")
+            if identity is None:
+                identity = (row.provider, row.model)
+            elif identity != (row.provider, row.model):
+                raise ValueError("benchmark run mixes provider/model identities")
             if row.case_id in result:
                 raise ValueError(f"duplicate benchmark case_id: {row.case_id}")
             result[row.case_id] = row
