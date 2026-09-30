@@ -92,6 +92,13 @@ def run_provider_case(
     model: str,
     case: ProviderBenchmarkCase,
 ) -> ProviderBenchmarkResult:
+    if (
+        not case.case_id.strip()
+        or not case.prompt.strip()
+        or not case.expected_terms
+        or any(not isinstance(term, str) or not term.strip() for term in case.expected_terms)
+    ):
+        raise ValueError("benchmark case requires an ID, prompt and non-empty expected terms")
     response = provider.generate(
         ProviderRequest(
             model=model,
