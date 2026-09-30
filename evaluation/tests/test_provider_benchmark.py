@@ -5,6 +5,7 @@ from evaluation.provider_benchmark import (
     compare_provider_runs,
     run_provider_case,
 )
+import pytest
 
 
 def test_provider_benchmark_case_passes_for_expected_term():
@@ -19,6 +20,17 @@ def test_provider_benchmark_case_passes_for_expected_term():
     )
     assert result.passed
     assert result.provider == "mock"
+
+
+@pytest.mark.parametrize("case", [
+    ProviderBenchmarkCase("", "prompt", ("term",)),
+    ProviderBenchmarkCase("a", "  ", ("term",)),
+    ProviderBenchmarkCase("a", "prompt", ()),
+    ProviderBenchmarkCase("a", "prompt", (" ",)),
+])
+def test_empty_benchmark_case_cannot_pass(case):
+    with pytest.raises(ValueError, match="benchmark case requires"):
+        run_provider_case(MockProvider(), model="mock-1", case=case)
 
 
 def _result(case_id: str, passed: bool) -> ProviderBenchmarkResult:
