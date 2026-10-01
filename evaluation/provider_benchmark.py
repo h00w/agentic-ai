@@ -48,9 +48,12 @@ def compare_provider_runs(
                 raise ValueError("benchmark case and provider/model identity must be non-empty")
             if (
                 not isinstance(row.passed, bool)
+                or isinstance(row.latency_ms, bool)
+                or not isinstance(row.latency_ms, (int, float))
                 or not isfinite(row.latency_ms)
                 or row.latency_ms < 0
                 or not isinstance(row.total_tokens, int)
+                or isinstance(row.total_tokens, bool)
                 or row.total_tokens < 0
             ):
                 raise ValueError(f"invalid benchmark result for case_id: {row.case_id}")
