@@ -77,6 +77,10 @@ def test_comparison_rejects_invalid_latency_and_token_evidence():
     for invalid in (
         ProviderBenchmarkResult("a", "mock", "mock-1", True, float("nan"), 5),
         ProviderBenchmarkResult("a", "mock", "mock-1", True, 10.0, -1),
+        ProviderBenchmarkResult("a", "mock", "mock-1", True, True, 5),
+        ProviderBenchmarkResult("a", "mock", "mock-1", True, "10", 5),
+        ProviderBenchmarkResult("a", "mock", "mock-1", True, None, 5),
+        ProviderBenchmarkResult("a", "mock", "mock-1", True, 10.0, True),
     ):
         with pytest.raises(ValueError, match="invalid benchmark result"):
             compare_provider_runs([invalid], [_result("a", True)])
