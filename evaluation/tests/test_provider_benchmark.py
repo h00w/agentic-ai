@@ -84,3 +84,31 @@ def test_comparison_rejects_invalid_latency_and_token_evidence():
     ):
         with pytest.raises(ValueError, match="invalid benchmark result"):
             compare_provider_runs([invalid], [_result("a", True)])
+
+
+@pytest.mark.parametrize("field, value", [("provider", "other"), ("provider", ""), ("model", " ")])
+def test_generated_benchmark_rejects_spoofed_or_missing_response_identity(field, value):
+    class InvalidIdentityProvider(MockProvider):
+        def generate(self, request):
+            return super().generate(request).model_copy(update={field: value})
+
+    with pytest.raises(ValueError, match="invoked provider"):
+        run_provider_case(
+            InvalidIdentityProvider(),
+            model="mock-1",
+            case=ProviderBenchmarkCase("a", "evidence", ("evidence",)),
+        )
+
+
+@pytest.mark.parametrize("model", ["", " ", None])
+def test_invalid_requested_model_fails_before_provider_call(model):
+    class UncalledProvider(MockProvider):
+        def generate(self, request):
+            raise AssertionError("invalid benchmark must not invoke the provider")
+
+    with pytest.raises(ValueError, match="benchmark case requires"):
+        run_provider_case(
+            UncalledProvider(),
+            model=model,
+            case=ProviderBenchmarkCase("a", "evidence", ("evidence",)),
+        )
