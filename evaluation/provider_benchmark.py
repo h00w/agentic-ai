@@ -96,8 +96,12 @@ def run_provider_case(
     case: ProviderBenchmarkCase,
 ) -> ProviderBenchmarkResult:
     if (
-        not case.case_id.strip()
+        not isinstance(case.case_id, str)
+        or not case.case_id.strip()
+        or not isinstance(case.prompt, str)
         or not case.prompt.strip()
+        or not isinstance(model, str)
+        or not model.strip()
         or not case.expected_terms
         or any(not isinstance(term, str) or not term.strip() for term in case.expected_terms)
     ):
@@ -108,6 +112,8 @@ def run_provider_case(
             messages=[Message(role="user", content=case.prompt)],
         )
     )
+    if response.provider != provider.name or not response.model.strip():
+        raise ValueError("benchmark response must identify the invoked provider and a model")
     passed = (
         evaluate_result(expected_terms=list(case.expected_terms), answer=response.text).task_success
         == 1.0
