@@ -37,6 +37,20 @@ def test_empty_benchmark_case_cannot_pass(case):
         run_provider_case(MockProvider(), model="mock-1", case=case)
 
 
+@pytest.mark.parametrize("terms", ["evidence", b"evidence", 1, None])
+def test_malformed_expected_terms_fail_before_provider_call(terms):
+    class UncalledProvider(MockProvider):
+        def generate(self, request):
+            raise AssertionError("invalid benchmark must not invoke the provider")
+
+    with pytest.raises(ValueError, match="benchmark case requires"):
+        run_provider_case(
+            UncalledProvider(),
+            model="mock-1",
+            case=ProviderBenchmarkCase("a", "evidence", terms),
+        )
+
+
 def _result(case_id: str, passed: bool) -> ProviderBenchmarkResult:
     return ProviderBenchmarkResult(case_id, "mock", "mock-1", passed, 10.0, 5)
 

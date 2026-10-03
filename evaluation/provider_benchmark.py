@@ -102,6 +102,7 @@ def run_provider_case(
         or not case.prompt.strip()
         or not isinstance(model, str)
         or not model.strip()
+        or not isinstance(case.expected_terms, (tuple, list))
         or not case.expected_terms
         or any(not isinstance(term, str) or not term.strip() for term in case.expected_terms)
     ):
