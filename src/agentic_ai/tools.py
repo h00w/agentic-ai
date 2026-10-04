@@ -16,7 +16,9 @@ class Tool:
 
 class ToolRegistry:
     def __init__(self, tools: list[Tool] | None = None) -> None:
-        self._tools: dict[str, Tool] = {tool.name: tool for tool in tools or []}
+        self._tools: dict[str, Tool] = {}
+        for tool in tools or []:
+            self.register(tool)
 
     def register(self, tool: Tool) -> None:
         if tool.name in self._tools:
