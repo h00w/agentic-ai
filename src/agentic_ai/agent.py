@@ -47,7 +47,9 @@ class AgentController:
             return AgentResult(answer, state, (perf_counter() - started) * 1000, tuple(decisions))
         while not state.completed and state.steps < self.max_steps:
             state.steps += 1
-            decision = self.policy.evaluate(tool_name, RiskLevel.LOW)
+            tool = self.tools.get(tool_name)
+            risk = RiskLevel.LOW if tool.read_only is True else RiskLevel.HIGH
+            decision = self.policy.evaluate(tool_name, risk)
             decisions.append(f"{tool_name}:{decision.value}")
             self.trace.record("policy", decisions[-1])
             if decision is PolicyDecision.DENY:
