@@ -21,6 +21,14 @@ class ToolRegistry:
             self.register(tool)
 
     def register(self, tool: Tool) -> None:
+        if not isinstance(tool.name, str) or not tool.name.strip():
+            raise ValueError("Tool name must be a non-empty string")
+        if not isinstance(tool.description, str) or not tool.description.strip():
+            raise ValueError("Tool description must be a non-empty string")
+        if not callable(tool.handler):
+            raise ValueError("Tool handler must be callable")
+        if not isinstance(tool.read_only, bool):
+            raise ValueError("Tool read_only must be a boolean")
         if tool.name in self._tools:
             raise ValueError(f"Tool already registered: {tool.name}")
         self._tools[tool.name] = tool

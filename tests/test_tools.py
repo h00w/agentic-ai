@@ -23,3 +23,17 @@ def test_distinct_tools_remain_available_in_stable_order():
     registry = ToolRegistry([tool("search"), tool("calculator", "42")])
     assert registry.names() == ["calculator", "search"]
     assert registry.execute("calculator", {}) == "42"
+
+
+@pytest.mark.parametrize(
+    "candidate,field",
+    [
+        (Tool("", "description", lambda arguments: "ok"), "name"),
+        (Tool("search", " ", lambda arguments: "ok"), "description"),
+        (Tool("search", "description", None), "handler"),
+        (Tool("search", "description", lambda arguments: "ok", read_only="true"), "read_only"),
+    ],
+)
+def test_registry_rejects_malformed_tool_contracts(candidate, field):
+    with pytest.raises(ValueError, match=field):
+        ToolRegistry([candidate])
