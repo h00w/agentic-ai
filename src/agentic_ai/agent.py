@@ -77,11 +77,13 @@ class AgentController:
     def _select_tool(self, goal: str) -> str | None:
         lowered = goal.lower()
         names = self.tools.names()
-        if ("calculate" in lowered or any(ch.isdigit() for ch in goal)) and "calculator" in names:
+        if "calculate" in lowered and "calculator" in names:
             return "calculator"
         if (
             any(word in lowered for word in ("search", "research", "find", "evidence"))
             and "search" in names
         ):
             return "search"
+        if any(ch.isdigit() for ch in goal) and "calculator" in names:
+            return "calculator"
         return names[0] if names else None
